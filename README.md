@@ -16,15 +16,15 @@ Focuses on using mixture models as a method for market timing.Types of mixtures 
 ### Chapter (Notebook) Outlines ###
 
 1. Motivation
-	-this chapter goes through a demo of challenges to time series prediction using real market data
-	-what is stationarity?
-	-why one distribution isn't enough?
-	-how can multiple distributions help?
+	- this chapter goes through a demo of challenges to time series prediction using real market data
+	- what is stationarity?
+	- why one distribution isn't enough?
+	- how can multiple distributions help?
 2. Gaussian mixtures
-	-in this chapter we explore the underlying intuition behind gaussian mixtures
-	-we apply a gaussian mixture model to predict security return distribution
-	-example in sklearn
-	-demo strengths and weaknesses
+	- in this chapter we explore the underlying intuition behind gaussian mixtures
+	- we apply a gaussian mixture model to predict security return distribution
+	- example in sklearn
+	- demo strengths and weaknesses
 3. Nonparametric mixture models
 	a. bayesian mixtures using sklearn and pymc3
 		-demo strengths and weaknesses
