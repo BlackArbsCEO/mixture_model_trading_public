@@ -26,17 +26,17 @@ Focuses on using mixture models as a method for market timing.Types of mixtures 
 	- example in sklearn
 	- demo strengths and weaknesses
 3. Nonparametric mixture models
-	a. bayesian mixtures using sklearn and pymc3
-		-demo strengths and weaknesses
-	b. dirichlet mixtures
-		-demo strengths and weaknesses
-	c. gaussian processes using sklearn and pymc3
-		-demo strengths and weaknesses
+	1. bayesian mixtures using sklearn and pymc3
+		- demo strengths and weaknesses
+	2. dirichlet mixtures
+		- demo strengths and weaknesses
+	3. gaussian processes using sklearn and pymc3
+		- demo strengths and weaknesses
 4. Designing the strategy
-	a. hypothesis/theory
-	b. testing
+	1. hypothesis/theory
+	2. testing
 5. Operationalizing 
-	a. ??
+	1. ??
 	
 * [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
 
