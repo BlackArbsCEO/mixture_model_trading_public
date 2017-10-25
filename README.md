@@ -1,17 +1,22 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
 
 ### What is this repository for? ###
 
 Tutorial demonstrating trading algorithm development from theory to implementation.
 
-Focuses on using mixture models as a method for market timing.Types of mixtures covered include:
+Focuses on using mixture models as a method for market timing. Types of mixtures covered include:
 
 * gaussian mixtures (sklearn, pymc3)
 * bayesian mixtures (sklearn, pymc3)
-* nonparametric mixtures (sklearn, pymc3)
-* gaussian processes (sklearn, pymc3)
+* gaussian processes (sklearn, pymc3) (maybe?)
+
+#### There are some challenges to implementation ####
+
+* I prefer to use the Quantopian platform for several reasons however there are some major restrictions on the packages that you are allowed to import (no pymc3) AND on the classes within certain approved packages (no sklearn.mix). 
+* This means I can try to implement a crude(r) version of backtest locally using either a custom solution or an already developed package (open to suggestions)
+* Or I code the required algorithm(s) from scratch within the constraints of Quantopian's allowed packages/classes.
+
  
 ### Chapter (Notebook) Outlines ###
 
@@ -28,19 +33,17 @@ Focuses on using mixture models as a method for market timing.Types of mixtures 
 3. Nonparametric mixture models
 	1. bayesian mixtures using sklearn and pymc3
 		- demo strengths and weaknesses
-	2. dirichlet mixtures
-		- demo strengths and weaknesses
 	3. gaussian processes using sklearn and pymc3
 		- demo strengths and weaknesses
 4. Designing the strategy
 	1. hypothesis/theory
-	2. testing
+	2. initial testing
+    3. backtesting 
 5. Operationalizing 
 	1. ??
-	
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+
 
 ### Who do I talk to? ###
 
-* blackarbsceo
+* blackarbsceo | [blackarbs.com](www.blackarbs.com)
 * bcr@blackarbs.com
