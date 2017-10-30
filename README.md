@@ -3,9 +3,9 @@
 
 ### What is this repository for? ###
 
-Tutorial demonstrating trading algorithm development from theory to implementation.
+Tutorial demonstrating trading algorithm development from theory to implementation. (IN-PROGESS)
 
-Focuses on using mixture models as a method for market timing. Types of mixtures covered include:
+Focuses on using mixture models as a method for market timing. Types of mixtures to be covered include:
 
 * gaussian mixtures (sklearn, pymc3)
 * bayesian mixtures (sklearn, pymc3)
@@ -14,9 +14,8 @@ Focuses on using mixture models as a method for market timing. Types of mixtures
 #### There are some challenges to implementation ####
 
 * I prefer to use the Quantopian platform for several reasons however there are some major restrictions on the packages that you are allowed to import (no pymc3) AND on the classes within certain approved packages (no sklearn.mix). 
-* This means I can try to implement a crude(r) version of backtest locally using either a custom solution or an already developed package (open to suggestions)
+* This means I can try to implement a crude(r) version of a backtest locally using either a custom solution or an already developed package (open to suggestions)
 * Or I code the required algorithm(s) from scratch within the constraints of Quantopian's allowed packages/classes.
-
  
 ### Chapter (Notebook) Outlines ###
 
