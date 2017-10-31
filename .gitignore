@@ -30,11 +30,6 @@ MANIFEST
 # Jupyter Notebook
 .ipynb_checkpoints
 
-# ignore all data files for now
-Barchart_Options_Data/
-Yahoo_Options_Data/
-dx-master/
-
 # ignore zip files
 *.zip
 
