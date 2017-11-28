@@ -1,5 +1,5 @@
-# README #
 
+# README #
 
 ### What is this repository for? ###
 
@@ -7,9 +7,11 @@ Tutorial demonstrating trading algorithm development from theory to implementati
 
 Focuses on using mixture models as a method for market timing. Types of mixtures to be covered include:
 
-* gaussian mixtures (sklearn, pymc3)
-* bayesian mixtures (sklearn, pymc3)
-* gaussian processes (sklearn, pymc3) (maybe?)
+* gaussian mixtures (sklearn, pymc3? pyro?)
+* bayesian mixtures (sklearn, pymc3? pyro?)
+* nonparametric mixtures (sklearn, pymc3? pyro?)
+* gaussian processes (sklearn, pymc3? pyro?)
+
 
 #### There are some challenges to implementation ####
 
@@ -30,19 +32,21 @@ Focuses on using mixture models as a method for market timing. Types of mixtures
 	- example in sklearn
 	- demo strengths and weaknesses
 3. Nonparametric mixture models
-	1. bayesian mixtures using sklearn and pymc3
+	1. bayesian mixtures using sklearn and pymc3? pyro?
 		- demo strengths and weaknesses
-	3. gaussian processes using sklearn and pymc3
+	2. dirichlet mixtures
+		- demo strengths and weaknesses
+	3. gaussian processes using sklearn and pymc3? pyro?
 		- demo strengths and weaknesses
 4. Designing the strategy
 	1. hypothesis/theory
 	2. initial testing
-    3. backtesting 
+    	3. backtesting 
 5. Operationalizing 
 	1. ??
-
 
 ### Who do I talk to? ###
 
 * blackarbsceo | [blackarbs.com](www.blackarbs.com)
 * bcr@blackarbs.com
+
