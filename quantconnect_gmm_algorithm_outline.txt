@@ -1,0 +1,22 @@
+Quantconnect Mixture Model Algorithm Outline
+
+Resolution: Daily
+
+> Get 252 day history of asset
+- estimate the optimal number of components using bic
+    - fit gmm using components
+    - extract hidden states, parameters
+    - sample from distr using those parameters
+> Log confidence interval boundaries for each symbol
+> Compare boundaries with current return to identify outliers
+> assess direction of outliers e.g. too low or too high
+> if trade is triggered use market on open order
+> store order time, quantity filled, quantity
+    - compare quantity w/ quantity filled to confirm full order
+    - what to do with partial orders?
+    - if order filled store order Id? and timestamp
+> to exit trade compare trade fill date with current date
+    - if time delta == lookahead period liquidate
+    
+> Should every trade be taken? Trade size?
+    - thinking yes and 2-5% of portfolio equity.    
