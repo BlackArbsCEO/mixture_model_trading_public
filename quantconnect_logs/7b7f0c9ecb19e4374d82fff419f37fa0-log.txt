@@ -1,0 +1,17 @@
+2013-10-07 00:00:00 Launching analysis for 7b7f0c9ecb19e4374d82fff419f37fa0 with LEAN Engine v2.4.0.1.2579
+2013-10-07 09:31:00 Submitting MarketOrder
+2013-10-07 09:31:00 OrderClosed
+2013-10-07 09:31:00 OrderEvents
+2013-10-07 09:31:00 OrderId
+2013-10-07 09:31:00 OrderType
+2013-10-07 09:31:00 Overloads
+2013-10-07 09:31:00 Quantity
+2013-10-07 09:31:00 QuantityFilled
+2013-10-07 09:31:00 SecurityType
+2013-10-07 09:31:00 Status
+2013-10-07 09:31:00 SubmitRequest
+2013-10-07 09:31:00 Symbol
+2013-10-07 09:31:00 Tag
+2013-10-07 09:31:00 Time
+2013-10-07 09:31:00 {'OrderId': 1, 'Status': 3, 'OrderClosed': <System.Threading.ManualResetEvent object at 0x7fd138183f10>, 'OrderEvents': [<QuantConnect.Orders.OrderEvent object at 0x7fd138183790>, <QuantConnect.Orders.OrderEvent object at 0x7fd138183f50>], 'OrderType': 0, 'Symbol': <QuantConnect.Symbol object at 0x7fd1378d92d0>, 'SecurityType': 1, 'Overloads': QuantConnect.Orders.OrderTicket(SecurityTransactionManager, SubmitOrderRequest), 'Tag': u'', 'SubmitRequest': <QuantConnect.Orders.SubmitOrderRequest object at 0x7fd138183810>, 'Time': datetime.datetime(2013, 10, 7, 13, 31, tzinfo=<custom_tzinfo.GMT object at 0x7fd1378d9310>), 'QuantityFilled': Decimal('10'), 'Quantity': Decimal('10')}
+2013-10-11 16:00:00 Algorithm Id:(7b7f0c9ecb19e4374d82fff419f37fa0) completed in 1.05 seconds at 2k data points per second. Processing total of 1,956 data points.

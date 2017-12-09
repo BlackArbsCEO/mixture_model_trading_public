@@ -1,0 +1,12 @@
+2013-10-07 00:00:00 Launching analysis for 2d05d1f6f587e2d9d5c6653641ce291c with LEAN Engine v2.4.0.1.2579
+2013-10-07 09:31:00 Runtime Error: Python.Runtime.PythonException: TypeError : unindexable object
+  at Python.Runtime.PyObject.Invoke (Python.Runtime.PyTuple args, Python.Runtime.PyDict kw) [0x00033] in <69d4fd635645431aa1e955e701040fd1>:0 
+  at Python.Runtime.PyObject.InvokeMethod (System.String name, Python.Runtime.PyTuple args, Python.Runtime.PyDict kw) [0x00007] in <69d4fd635645431aa1e955e701040fd1>:0 
+  at Python.Runtime.PyObject.TryInvokeMember (System.Dynamic.InvokeMemberBinder binder, System.Object[] args, System.Object& result) [0x0003e] in <69d4fd635645431aa1e955e701040fd1>:0 
+  at (wrapper dynamic-method) System.Object:CallSite.Target (System.Runtime.CompilerServices.Closure,System.Runtime.CompilerServices.CallSite,object,QuantConnect.Data.Slice)
+  at System.Dynamic.UpdateDelegates.UpdateAndExecuteVoid2[T0,T1] (System.Runtime.CompilerServices.CallSite site, T0 arg0, T1 arg1) [0x00128] in <63992662b765477a898ef49cdcc99ee2>:0 
+  at QuantConnect.AlgorithmFactory.Python.Wrappers.AlgorithmPythonWrapper.OnData (QuantConnect.Data.Slice slice) [0x000c6] in <b573220ea12947a3903d40e8110f3eb2>:0 
+  at QuantConnect.Lean.Engine.AlgorithmManager.Run (QuantConnect.Packets.AlgorithmNodePacket job, QuantConnect.Interfaces.IAlgorithm algorithm, QuantConnect.Lean.Engine.DataFeeds.IDataFeed feed, QuantConnect.Lean.Engine.TransactionHandlers.ITransactionHandler transactions, QuantConnect.Lean.Engine.Results.IResultHandler results, QuantConnect.Lean.Engine.RealTime.IRealTimeHandler realtime, QuantConnect.Lean.Engine.Server.ILeanManager leanManager, System.Threading.CancellationToken token) [0x01259] in <f69c63395b2542449f93b0dadd9665d5>:0 
+2013-10-07 09:31:00 Algorithm Id:(2d05d1f6f587e2d9d5c6653641ce291c) completed in 11.25 seconds at 0k data points per second. Processing total of 3 data points.
+2013-10-07 09:31:00 Submitting MarketOrder
+2013-10-07 09:31:00 OrderClosed
