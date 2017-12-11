@@ -1,0 +1,9 @@
+2013-10-07 00:00:00 Launching analysis for 7c9b73e00128cb685d4b154829a995bf with LEAN Engine v2.4.0.1.2579
+2013-10-09 00:00:00 2013-10-09 00:00:00: 4: Time: 10/9/2013 4:00:00 AM OrderID: 1 Symbol: SPY Status: Submitted
+2013-10-09 00:00:00 1
+2013-10-09 00:00:00 []
+2013-10-10 00:00:00 2013-10-10 00:00:00: 4: Time: 10/10/2013 4:00:00 AM OrderID: 1 Symbol: SPY Status: Filled Quantity: 32 FillPrice: 152.9195 USD OrderFee: 1 USD
+2013-10-10 00:00:00 3
+2013-10-10 00:00:00 []
+2013-10-29 00:00:00 Algorithm Id:(7c9b73e00128cb685d4b154829a995bf) Deleted by request.
+2013-10-29 00:00:00 Algorithm Id:(7c9b73e00128cb685d4b154829a995bf) completed in 9.26 seconds at 0k data points per second. Processing total of 2,835 data points.

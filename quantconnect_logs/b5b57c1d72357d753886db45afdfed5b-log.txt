@@ -1,0 +1,17 @@
+2013-10-07 00:00:00 Launching analysis for b5b57c1d72357d753886db45afdfed5b with LEAN Engine v2.4.0.1.2579
+2013-10-09 00:00:00 Submitting MarketOnOpenOrder
+2013-10-09 00:00:00 2013-10-09 00:00:00: 4: Time: 10/9/2013 4:00:00 AM OrderID: 1 Symbol: SPY Status: Submitted
+2013-10-09 00:00:00 []
+2013-10-10 00:00:00 2013-10-10 00:00:00: 4: Time: 10/10/2013 4:00:00 AM OrderID: 1 Symbol: SPY Status: Filled Quantity: -32 FillPrice: 152.9195 USD OrderFee: 1 USD
+2013-10-10 00:00:00 [(datetime.datetime(2013, 10, 10, 0, 0), datetime.datetime(2013, 10, 15, 0, 0))]
+2013-10-15 00:00:00 Converted OrderID: 2 into a MarketOnOpen order.
+2013-10-15 00:00:00 2013-10-15 00:00:00: 4: Time: 10/15/2013 4:00:00 AM OrderID: 2 Symbol: SPY Status: Submitted
+2013-10-15 00:00:00 [(datetime.datetime(2013, 10, 10, 0, 0), datetime.datetime(2013, 10, 15, 0, 0))]
+2013-10-15 00:00:00 selling all positions, time: 2013-10-15 00:00:00
+2013-10-16 00:00:00 2013-10-16 00:00:00: 4: Time: 10/16/2013 4:00:00 AM OrderID: 2 Symbol: SPY Status: Filled Quantity: 32 FillPrice: 157.2633 USD OrderFee: 1 USD
+2013-10-16 00:00:00 [(datetime.datetime(2013, 10, 16, 0, 0), datetime.datetime(2013, 10, 21, 0, 0))]
+2013-10-18 00:00:00 2013-10-18 00:00:00: 4: Time: 10/18/2013 4:00:00 AM OrderID: 3 Symbol: SPY Status: Submitted
+2013-10-18 00:00:00 [(datetime.datetime(2013, 10, 16, 0, 0), datetime.datetime(2013, 10, 21, 0, 0))]
+2013-10-19 00:00:00 2013-10-19 00:00:00: 4: Time: 10/19/2013 4:00:00 AM OrderID: 3 Symbol: SPY Status: Filled Quantity: 31 FillPrice: 160.3437 USD OrderFee: 1 USD
+2013-10-19 00:00:00 [(datetime.datetime(2013, 10, 16, 0, 0), datetime.datetime(2013, 10, 21, 0, 0)), (datetime.datetime(2013, 10, 19, 0, 0), datetime.datetime(2013, 10, 24, 0, 0))]
+2014-11-12 00:00:00 Algorithm Id:(b5b57c1d72357d753886db45afdfed5b) completed in 111.26 seconds at 0k data points per second. Processing total of 48,934 data points.
