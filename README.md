@@ -35,7 +35,7 @@ The strategy development focuses on using mixture models as a method for market 
 	- In this chapter we will use what we have learned to construct a strategy idea
 	- We rapidly prototype the idea using the data we have to decide if the idea is worth further testing
 4. **Operationalizing: (In-progress...)**
-	- In this chapter we will implement the idea into a strategy using the Quantconnect platform.
+	- In this chapter we will implement the idea into a strategy using the Quantconnect platform IDE.
 	- We will implement the simplified components of an automated strategy including:
 		* slippage/fees		
 		* order management, 
