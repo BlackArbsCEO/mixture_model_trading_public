@@ -44,7 +44,15 @@ The strategy development focuses on using mixture models as a method for market 
 		* task scheduling
 	- We backtest this strategy and analyze the results
 
-### Who do I talk to? ###
+### QuantConnect Links/Resources for Python Users ###
+
+* [How to use the api?](https://www.quantconnect.com/docs)
+* [Github repo full of Python Algo Examples](https://github.com/QuantConnect/Lean/tree/master/Algorithm.Python)
+* [Forum discussion-migrating from Quantopian to Quantconnect](https://www.quantconnect.com/forum/discussion/2317/migrating-from-quantopian-to-quantconnect/p2)
+* [Tutorials](https://www.quantconnect.com/tutorials/)
+
+
+### Who do I talk to about this repo? ###
 
 * blackarbsceo | [blackarbs.com](www.blackarbs.com)
 * bcr@blackarbs.com
