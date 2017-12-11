@@ -7,10 +7,10 @@ The primary goal of this repo is to demonstrate the workflow between research of
 
 The strategy development focuses on using mixture models as a method for market timing. Types of mixtures to be covered include:
 
-* gaussian mixtures (in-progress...)
-* bayesian mixtures (not-started)
-* nonparametric mixtures (not-started)
-* gaussian processes (not-started)
+* gaussian mixtures **(in-progress...)**
+* bayesian mixtures **(not-started)**
+* nonparametric mixtures **(not-started)**
+* gaussian processes **(not-started)**
 
 
 #### There are some challenges to implementation ####
