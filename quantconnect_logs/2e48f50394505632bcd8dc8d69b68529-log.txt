@@ -1,3 +1,0 @@
-2013-10-07 00:00:00 Launching analysis for 2e48f50394505632bcd8dc8d69b68529 with LEAN Engine v2.4.0.1.2579
-2013-10-07 09:31:00 Submitting MarketOrder
-2013-10-11 16:00:00 Algorithm Id:(2e48f50394505632bcd8dc8d69b68529) completed in 1.07 seconds at 2k data points per second. Processing total of 1,956 data points.
