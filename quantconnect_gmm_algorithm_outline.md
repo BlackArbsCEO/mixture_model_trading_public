@@ -10,19 +10,19 @@ Resolution: Daily
 
 2. Check if any current holdings meet liquidation criteria:
 	* check if today's date is greater than or equal to liquidation date
+	* if so liquidate position
 
 3. Run main algorithm:
-	* lookback period: 252 days or 1 trading year
-	* compute optimal number of components over lookback period using `bic`
-     	* fit gmm using components
+	* lookback period: `252 days` or approximately `1 trading year`
+     	* fit gmm using `N` components
      	* extract hidden states, parameters
-     	* sample from distr using those parameters
-	* log confidence interval boundaries for each symbol
+     	* sample from chosen distribution using predicted state parameters
+	* compute estimate of confidence interval boundaries for each symbol
 	* compare boundaries with current return to identify outliers
 	* assess direction of outliers e.g. `too_low` or `too_high`
 	* assign securities to long or short list based on direction of outliers.
 
 4. Use main algorithm results to send orders:
 	* use long and/or short list to send orders
-	* this implementation attempts to use `MarketOnOpenOrders`
+	* this implementation uses `MarketOnOpenOrders`.
  
