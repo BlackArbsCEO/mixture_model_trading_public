@@ -34,7 +34,7 @@ The strategy development focuses on using mixture models as a method for market 
 3. **Designing the strategy: (Completed-Editing...)**
 	- In this chapter we will use what we have learned to construct a strategy idea
 	- We rapidly prototype the idea using the data we have to decide if the idea is worth further testing
-4. **Operationalizing: (In-progress...)**
+4. **Implementation: (Completed-Editing...)**
 	- In this chapter we will implement the idea into a strategy using the Quantconnect platform IDE.
 	- We will implement the simplified components of an automated strategy including:
 		* slippage/fees		
@@ -42,7 +42,8 @@ The strategy development focuses on using mixture models as a method for market 
 		* inventory management, 
 		* indicator construction,
 		* task scheduling
-	- We backtest this strategy and analyze the results
+5. **Evaluation: (In-Progress...)**
+	- Backtest the strategy and analyze the results
 
 ### QuantConnect Links/Resources for Python Users ###
 
