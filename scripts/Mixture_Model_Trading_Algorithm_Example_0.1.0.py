@@ -54,7 +54,8 @@ N_INIT = register_param('n inits (GMM)', 25)
 # global funcs
 # ------------------------------------------------------------------------------
 
-def make_gmm(n_components=N_COMPONENTS, max_iter=MAX_ITER, n_init=N_INIT, random_state=RANDOM_STATE):
+def make_gmm(n_components=N_COMPONENTS, max_iter=MAX_ITER, 
+             n_init=N_INIT, random_state=RANDOM_STATE):
     """fn: create gmm object"""
     model_kwds = dict(n_components=n_components, 
                       max_iter=max_iter,
@@ -112,7 +113,7 @@ class TradingWithGMM(QCAlgorithm):
         # other algo parameter settings
         # -----------------------------------------------------------------------------
         
-        self._holding_period = register_param('holding period (days)', 63)
+        self.HOLDING_PERIOD = register_param('holding period (days)', 63)
         self.LOOKBACK = register_param('lookback (days)', 252)
         self.BET_SIZE = register_param('bet size', 0.05)
         self.LEVERAGE = register_param('leverage', 1.)
@@ -159,16 +160,22 @@ class TradingWithGMM(QCAlgorithm):
         
         # -----------------------------------------------------------------------------
         # initialize historical prices 
-        #   cache the price data so we don't have to request the entire df every week
+        #   cache the price data so we don't have to request the entire df for 
+        #   every self.History() call
         # -----------------------------------------------------------------------------
-        self.prices = self.History(self.symbols, self.LOOKBACK, Resolution.Daily)["close"].unstack(level=0).astype(np.float32) 
+        self.prices = (self.History(self.symbols, self.LOOKBACK, Resolution.Daily)
+                       ["close"]
+                       .unstack(level=0)
+                       .astype(np.float32)) 
             
         # -----------------------------------------------------------------------------    
         # LOG PARAMETER REGISTRY
         #   this makes it easy to link backtest parameter settings with the saved results
         #   by logging/printing the information at the top of every backtest log
         # ----------------------------------------------------------------------------- 
-        self.Debug('\n'+'-'*77+'\nPARAMETER REGISTRY\n{}...'.format(json.dumps(PARAMETER_REGISTRY, indent=2)))
+        self.Debug('\n'+'-'*77+'\nPARAMETER REGISTRY\n{}...'.format(
+            json.dumps(PARAMETER_REGISTRY, indent=2)
+        ))
     
     def update_prices(self):
         """fn: to update prices in an efficient manner"""
@@ -184,9 +191,13 @@ class TradingWithGMM(QCAlgorithm):
             return
         
         # get prices
-        new_prices = self.History(self.symbols, days_to_request, Resolution.Daily)["close"].unstack(level=0).astype(np.float32)
+        new_prices = (self.History(self.symbols, days_to_request, Resolution.Daily)
+                      ["close"]
+                      .unstack(level=0)
+                      .astype(np.float32))
         self.prices = pd.concat([self.prices, new_prices]) # combine datasets
-        self.prices = self.prices.drop_duplicates().sort_index().iloc[-self.LOOKBACK:] # clean it up and keep only lookback period
+        # clean it up and keep only lookback period
+        self.prices = self.prices.drop_duplicates().sort_index().iloc[-self.LOOKBACK:]
         return
     
     def check_liquidate(self):
@@ -199,16 +210,17 @@ class TradingWithGMM(QCAlgorithm):
         else: return
         
         # current time is gt_eq order time + holding period
-        crit1 = lambda order: self.UtcTime >= (order.Time + timedelta(self._holding_period))
+        crit1 = lambda order: self.UtcTime >= (order.Time + timedelta(self.HOLDING_PERIOD))
         # order time is within today - holding period window
-        crit2 = lambda order: order.Time >= (self.UtcTime - timedelta(self._holding_period + 7)) # 7 day overlap
+        #   7 day overlap between crit1 and crit2
+        crit2 = lambda order: order.Time >= (self.UtcTime - timedelta(self.HOLDING_PERIOD + 7)) 
         
         for order in orders:
             if crit1(order) & crit2(order):
                 if self.Portfolio[order.Symbol].Invested:
                     self.Liquidate(order.Symbol)
                     fmt_args = (self.UtcTime, order.Symbol, order.Time, self.UtcTime - order.Time)
-                    self.Log('[{}] liquidating... {}, order date: {}, time delta: {}'.format(*fmt_args))
+                    self.Log('[{}] liquidating {}, order date: {}, time delta: {}'.format(*fmt_args))
         return
     
     def compute(self, sym):
@@ -231,16 +243,24 @@ class TradingWithGMM(QCAlgorithm):
         ### must match distribution selected in global parameter section ###
         
         ## normal distribution ##
-        rvs = stats.norm.rvs(loc=last_mean, scale=np.sqrt(last_var), size=N_SAMPLES, random_state=RANDOM_STATE)
-        low_ci, high_ci = stats.norm.interval(alpha=ALPHA, loc=np.mean(rvs), scale=np.std(rvs))
+        rvs = stats.norm.rvs(loc=last_mean, scale=np.sqrt(last_var), 
+                             size=N_SAMPLES, random_state=RANDOM_STATE)
+        low_ci, high_ci = stats.norm.interval(alpha=ALPHA,
+                                              loc=np.mean(rvs), scale=np.std(rvs))
         
         ## laplace distribution ##
-        #rvs = stats.laplace.rvs(loc=last_mean, scale=np.sqrt(last_var), size=N_SAMPLES, random_state=RANDOM_STATE)
-        #low_ci, high_ci = stats.laplace.interval(alpha=ALPHA, loc=np.mean(rvs), scale=np.std(rvs))
+        #rvs = stats.laplace.rvs(loc=last_mean, scale=np.sqrt(last_var),
+        #                        size=N_SAMPLES, random_state=RANDOM_STATE)
+        #low_ci, high_ci = stats.laplace.interval(alpha=ALPHA,
+        #                                         loc=np.mean(rvs), scale=np.std(rvs))
         
         ## johnson su distribution ##
-        #rvs = stats.johnsonsu.rvs(a=a, b=b, loc=last_mean, scale=np.sqrt(last_var), size=N_SAMPLES, random_state=RANDOM_STATE)
-        #low_ci, high_ci = stats.johnsonsu.interval(alpha=ALPHA, a=a, b=b, loc=np.mean(rvs), scale=np.std(rvs))
+        #rvs = stats.johnsonsu.rvs(a=a, b=b, 
+        #                          loc=last_mean, scale=np.sqrt(last_var), 
+        #                          size=N_SAMPLES, random_state=RANDOM_STATE)
+        #low_ci, high_ci = stats.johnsonsu.interval(alpha=ALPHA,
+        #                                           a=a, b=b, 
+        #                                           loc=np.mean(rvs), scale=np.std(rvs))
         
         ## get current return ##
         tmp_ret = np.log(float(self.Securities[sym].Price) / train_px.iloc[-1])
@@ -260,7 +280,7 @@ class TradingWithGMM(QCAlgorithm):
         
         start_time = time.time()
     
-        self.Log('\n'+'-'*77+'\n[{}] Begin main algorithm computation...'.format(self.UtcTime))
+        self.Log('\n'+'-'*77+'\n[{}] Begin main algo computation...'.format(self.UtcTime))
         
         ### set buy/sell lists to False to confirm no carryover ###
         self._longs = False
@@ -270,7 +290,9 @@ class TradingWithGMM(QCAlgorithm):
         self.update_prices()
         
         ### compute data ###
-        tmp_data_list = [self.compute(asset) for asset in self.prices.columns if not self.Portfolio[asset].Invested]
+        tmp_data_list = [self.compute(asset) 
+                         for asset in self.prices.columns
+                         if not self.Portfolio[asset].Invested]
         
         ### construct long/short arrays ###
         if tmp_data_list:
@@ -287,9 +309,10 @@ class TradingWithGMM(QCAlgorithm):
             # self._longs = np.asarray(df.query('result_tag=="too_high"')['symbol'].unique())            
             # self._shorts = np.asarray(df.query('result_tag=="too_low"')['symbol'].unique())
 
-            self.Log('\n'+'-'*77+'\n[{0}] longs: {1}\n[{0}] shorts: {2}'.format(self.UtcTime, self._longs, self._shorts))
+            log_str = (self.UtcTime, self._longs, self._shorts)
+            self.Log('\n'+'-'*77+'\n[{0}] longs: {1}\n[{0}] shorts: {2}'.format(*log_str))
         else:
-            self.Log('[{}] already fully invested, no computations run, exiting...'.format(self.UtcTime))
+            self.Log('[{}] already fully invested, exiting...'.format(self.UtcTime))
             
         self.time_to_run_main_algo = time.time() - start_time
         return
@@ -297,15 +320,16 @@ class TradingWithGMM(QCAlgorithm):
     def send_orders(self):
         """fn: send orders"""
         
-        self.Log('\n'+'-'*77+'\n[{}] checking buy sell arrays to send orders...'.format(self.UtcTime))
+        self.Log('\n'+'-'*77+'\n[{}] checking L/S arrays to send orders...'.format(self.UtcTime))
         
         ### confirm lists are proper array datatype ###
         if isinstance(self._shorts, np.ndarray):
             if self._shorts.size: # confirm not empty 
                 for sym in self._shorts:
                     if not self.Portfolio[sym].Invested: # only send order if not invested   
-                        self.Log('[{}] sending short order for {}...'.format(self.UtcTime, sym))                        
-                        newTicket = self.MarketOnOpenOrder(sym, self.CalculateOrderQuantity(sym, -self.LEVERAGE*self.BET_SIZE))
+                        self.Log('[{}] sending short order for {}...'.format(self.UtcTime, sym))
+                        short_shares = self.CalculateOrderQuantity(sym, -self.LEVERAGE*self.BET_SIZE)
+                        newTicket = self.MarketOnOpenOrder(sym, short_shares)
                         self.openMarketOnOpenOrders.append(newTicket) # track ticket 
             else:
                 self.Log('[{}] no shorts listed, no orders sent...'.format(self.UtcTime))
@@ -315,8 +339,9 @@ class TradingWithGMM(QCAlgorithm):
             if self._longs.size: # confirm not empty 
                 for sym in self._longs:
                     if not self.Portfolio[sym].Invested: # only send order if not invested 
-                        self.Log('[{}] sending long order for {}...'.format(self.UtcTime, sym))                        
-                        newTicket = self.MarketOnOpenOrder(sym, self.CalculateOrderQuantity(sym, self.LEVERAGE*self.BET_SIZE))
+                        self.Log('[{}] sending long order for {}...'.format(self.UtcTime, sym))
+                        long_shares = self.CalculateOrderQuantity(sym, self.LEVERAGE*self.BET_SIZE)
+                        newTicket = self.MarketOnOpenOrder(sym, long_shares)
                         self.openMarketOnOpenOrders.append(newTicket) # track ticket 
             else:
                 self.Log('[{}] no longs listed, no orders sent...'.format(self.UtcTime))
@@ -327,8 +352,10 @@ class TradingWithGMM(QCAlgorithm):
         """fn: to track Ram, Computation Time, Leverage, Cash"""
         self.Plot(self.splotName,'RAM', OS.ApplicationMemoryUsed/1024.)
         self.Plot(self.splotName,'Time', self.time_to_run_main_algo)
-        self.track_account_leverage = self.Portfolio.TotalAbsoluteHoldingsCost / self.Portfolio.TotalPortfolioValue
-        self.Plot(self.splotName, 'Leverage', float(self.track_account_leverage))
+
+        P = self.Portfolio
+        self.track_leverage = P.TotalAbsoluteHoldingsCost / P.TotalPortfolioValue
+        self.Plot(self.splotName, 'Leverage', float(self.track_leverage))
         self.Plot(self.splotName, 'Cash', float(self.Portfolio.Cash))   
         
     def OnData(self, data):
