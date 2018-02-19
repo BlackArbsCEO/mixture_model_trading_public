@@ -42,8 +42,17 @@ The strategy development focuses on using mixture models as a method for market 
 		* inventory management, 
 		* indicator construction,
 		* task scheduling
-5. **Evaluation: (In-Progress...)**
-	- Backtest the strategy and analyze the results
+5. **Evaluation: (Completed-Editing...)**
+	- Backtest the strategy.
+	- Download backtest portfolio equity
+	![quantconnect algo equit download](https://raw.githubusercontent.com/BlackArbsCEO/mixture_model_trading_public/master/visuals/05_Algorithm_Evaluation/Quantconnect-download-data-gif-Peek%202018-02-19%2010-42.gif)
+Read in Algorithm Portfolio Equity
+	- Choose the Best Algorithm Among 4 Variants
+	- Choose Best Bayesian Model of Algorithm Returns
+	- Compare Bayesian Cones for all Algos and all Return Models
+	- Compare Best Algo Predicted Portfolio Ending Values
+	- Compare Best Algo Predicted CAGR Distributions
+	- Model Averaging
 
 ### QuantConnect Links/Resources for Python Users ###
 
