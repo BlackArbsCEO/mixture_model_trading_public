@@ -57,9 +57,9 @@ class pymc3_helper:
 
         ax = pm.traceplot(trcs, varnames=varnames, figsize=(12,nrows*1.4),
                           lines={k: v['mean'] for k, v in 
-                                 pm.df_summary(trcs,varnames=varnames).iterrows()})
+                                 pm.summary(trcs,varnames=varnames).iterrows()})
 
-        for i, mn in enumerate(pm.df_summary(trcs, varnames=varnames)['mean']):
+        for i, mn in enumerate(pm.summary(trcs, varnames=varnames)['mean']):
             ax[i,0].annotate('{:.2f}'.format(mn), xy=(mn,0), xycoords='data',
                              xytext=(5,10), textcoords='offset points', rotation=90,
                              va='bottom', fontsize='large', color='#AA0022')
@@ -102,22 +102,18 @@ class pymc3_helper:
     # helper funcs for simulating bayesian paths  
     def make_mean_path(self, sim_path_df):
         return (sim_path_df
-                .assign(mean_sim_port=lambda df: df.mean(1))) 
+                .assign(mean_sim_path=lambda df: df.mean(1))) 
 
     def make_ppc_df(self, ppc_samples):
         """fn: to make ppc df from ppc sample output"""
-        ppc = pd.DataFrame(ppc_samples['returns'])
-        # make future index
-        ppc.index = pd.date_range(pd.to_datetime('today'),
-                                  periods=ppc.shape[0], freq='D')
-        ppc = self.make_mean_path(ppc) # add mean path to df
-        # cast int cols to str
-        ppc.columns = [str(x) for x in ppc.columns]
+
+        ppc = self.make_mean_path(ppc_samples) # add mean path to df
+        #ppc = ppc['mean_sim_path'].to_frame()
         return ppc
 
     def get_samp_cols(self, df, n_cols):
         """fn: to extract subset of df columns and glue to mean simulated portfolio"""
-        return np.hstack((df.columns[:n_cols], np.array(['mean_sim_port'])))
+        return np.hstack((df.columns[:n_cols], np.array(['mean_sim_path'])))
 
     def _make_ppc_cuml_df(self, ppc, n_cols=2000):
         """fn: to compute df of cuml sum of ppc sampled returns"""
