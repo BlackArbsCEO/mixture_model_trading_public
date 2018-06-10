@@ -1,6 +1,8 @@
 
 # README #
 
+#### Note: If you have issues viewing the notebooks copy/paste the nb link into nbviewer.jupyter.org
+
 ### What is this repository for? ###
 
 The primary goal of this repo is to demonstrate the workflow between research of a quantitative idea or theory to implementation as a potential live trading strategy. Unlike other finance based tutorials the results will not be cherry picked to show only the best of the best examples. Sometimes results are counterintuitive, sometimes they are conflicting. Real strategy development is often dirty, complex, full of starts and stops and requires us to use all of our skills to extract the signal from the noise. With that said I welcome interactive engagement, ideas, insight, and constructive criticism, especially if errors or bugs are found. **(IN-PROGESS...)**
