@@ -1,0 +1,11 @@
+[1] jupyter nbconvert /media/kingmaster/HDD/Code_Backups_Sync/mixture_model_trading_public/notebooks/current_public_notebooks/01_Motivation_07_2019.ipynb--to slides --post serve --SlidesExporter.reveal_scroll=True
+
+[2] jupyter nbconvert /media/kingmaster/HDD/Code_Backups_Sync/mixture_model_trading_public/notebooks/current_public_notebooks/02_Intro_to_Gaussian_Mixtures_7_2019.ipynb --to slides --post serve --SlidesExporter.reveal_scroll=True
+
+[3] jupyter nbconvert /media/kingmaster/HDD/Code_Backups_Sync/mixture_model_trading_public/notebooks/current_public_notebooks/03_Are_Gaussian_Mixture_Components_More_Stationary_2019-01-01.ipynb --to slides --post serve --SlidesExporter.reveal_scroll=True
+
+[4] jupyter nbconvert /media/kingmaster/HDD/Code_Backups_Sync/mixture_model_trading_public/notebooks/current_public_notebooks/04_VAR_accuracy_of_Mixture_Models_vs_GARCH_et_al_2019-01-01.ipynb --to slides --post serve --SlidesExporter.reveal_scroll=True
+
+[5] jupyter nbconvert /media/kingmaster/HDD/Code_Backups_Sync/mixture_model_trading_public/notebooks/current_public_notebooks/05_Inverse_VAR_Weight_Algorithms_Comparison_and_Evaluation_2019-01-01.ipynb --to slides --post serve --SlidesExporter.reveal_scroll=True
+
+[6] jupyter nbconvert /media/kingmaster/HDD/Code_Backups_Sync/mixture_model_trading_public/notebooks/current_public_notebooks/06_Using_GMM_to_Create_Synthetic_Data_07_2019.ipynb --to slides --post serve --SlidesExporter.reveal_scroll=True

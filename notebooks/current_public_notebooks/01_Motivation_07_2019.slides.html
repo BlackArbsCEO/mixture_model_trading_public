@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,14 +8,15 @@
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
+
 <title>01_Motivation_07_2019 slides</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <!-- General and theme style sheets -->
-<link rel="stylesheet" href="reveal.js/css/reveal.css">
-<link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/reveal.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/theme/simple.css" id="theme">
 
 <!-- If the query includes 'print-pdf', include the PDF print sheet -->
 <script>
@@ -24,19 +24,19 @@ if( window.location.search.match( /print-pdf/gi ) ) {
         var link = document.createElement( 'link' );
         link.rel = 'stylesheet';
         link.type = 'text/css';
-        link.href = 'reveal.js/css/print/pdf.css';
+        link.href = 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/print/pdf.css';
         document.getElementsByTagName( 'head' )[0].appendChild( link );
 }
 
 </script>
 
 <!--[if lt IE 9]>
-<script src="reveal.js/lib/js/html5shiv.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/lib/js/html5shiv.js"></script>
 <![endif]-->
 
 <!-- Loading the mathjax macro -->
 <!-- Load mathjax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -58,7 +58,7 @@ if( window.location.search.match( /print-pdf/gi ) ) {
     <!-- End of mathjax configuration -->
 
 <!-- Get Font-awesome from cdn -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 
 <style type="text/css">
     /*!
@@ -255,7 +255,6 @@ th {
   *:before,
   *:after {
     background: transparent !important;
-    color: #000 !important;
     box-shadow: none !important;
     text-shadow: none !important;
   }
@@ -6800,15 +6799,15 @@ button.close {
 *
 */
 /*!
- *  Font Awesome 4.2.0 by @davegandy - http://fontawesome.io - @fontawesome
+ *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
  */
 /* FONT PATH
  * -------------------------- */
 @font-face {
   font-family: 'FontAwesome';
-  src: url('../components/font-awesome/fonts/fontawesome-webfont.eot?v=4.2.0');
-  src: url('../components/font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.2.0') format('embedded-opentype'), url('../components/font-awesome/fonts/fontawesome-webfont.woff?v=4.2.0') format('woff'), url('../components/font-awesome/fonts/fontawesome-webfont.ttf?v=4.2.0') format('truetype'), url('../components/font-awesome/fonts/fontawesome-webfont.svg?v=4.2.0#fontawesomeregular') format('svg');
+  src: url('../components/font-awesome/fonts/fontawesome-webfont.eot?v=4.7.0');
+  src: url('../components/font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'), url('../components/font-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), url('../components/font-awesome/fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'), url('../components/font-awesome/fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'), url('../components/font-awesome/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -6865,6 +6864,19 @@ button.close {
   border: solid 0.08em #eee;
   border-radius: .1em;
 }
+.fa-pull-left {
+  float: left;
+}
+.fa-pull-right {
+  float: right;
+}
+.fa.fa-pull-left {
+  margin-right: .3em;
+}
+.fa.fa-pull-right {
+  margin-left: .3em;
+}
+/* Deprecated as of 4.4.0 */
 .pull-right {
   float: right;
 }
@@ -6880,6 +6892,10 @@ button.close {
 .fa-spin {
   -webkit-animation: fa-spin 2s infinite linear;
   animation: fa-spin 2s infinite linear;
+}
+.fa-pulse {
+  -webkit-animation: fa-spin 1s infinite steps(8);
+  animation: fa-spin 1s infinite steps(8);
 }
 @-webkit-keyframes fa-spin {
   0% {
@@ -6902,31 +6918,31 @@ button.close {
   }
 }
 .fa-rotate-90 {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
 }
 .fa-rotate-180 {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 .fa-rotate-270 {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)";
   -webkit-transform: rotate(270deg);
   -ms-transform: rotate(270deg);
   transform: rotate(270deg);
 }
 .fa-flip-horizontal {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1);
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
   -webkit-transform: scale(-1, 1);
   -ms-transform: scale(-1, 1);
   transform: scale(-1, 1);
 }
 .fa-flip-vertical {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1);
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
   -webkit-transform: scale(1, -1);
   -ms-transform: scale(1, -1);
   transform: scale(1, -1);
@@ -7411,6 +7427,7 @@ button.close {
 .fa-twitter:before {
   content: "\f099";
 }
+.fa-facebook-f:before,
 .fa-facebook:before {
   content: "\f09a";
 }
@@ -7423,6 +7440,7 @@ button.close {
 .fa-credit-card:before {
   content: "\f09d";
 }
+.fa-feed:before,
 .fa-rss:before {
   content: "\f09e";
 }
@@ -8060,7 +8078,8 @@ button.close {
 .fa-male:before {
   content: "\f183";
 }
-.fa-gittip:before {
+.fa-gittip:before,
+.fa-gratipay:before {
   content: "\f184";
 }
 .fa-sun-o:before {
@@ -8164,7 +8183,7 @@ button.close {
 .fa-digg:before {
   content: "\f1a6";
 }
-.fa-pied-piper:before {
+.fa-pied-piper-pp:before {
   content: "\f1a7";
 }
 .fa-pied-piper-alt:before {
@@ -8290,6 +8309,7 @@ button.close {
   content: "\f1ce";
 }
 .fa-ra:before,
+.fa-resistance:before,
 .fa-rebel:before {
   content: "\f1d0";
 }
@@ -8303,6 +8323,8 @@ button.close {
 .fa-git:before {
   content: "\f1d3";
 }
+.fa-y-combinator-square:before,
+.fa-yc-square:before,
 .fa-hacker-news:before {
   content: "\f1d4";
 }
@@ -8470,6 +8492,657 @@ button.close {
 }
 .fa-meanpath:before {
   content: "\f20c";
+}
+.fa-buysellads:before {
+  content: "\f20d";
+}
+.fa-connectdevelop:before {
+  content: "\f20e";
+}
+.fa-dashcube:before {
+  content: "\f210";
+}
+.fa-forumbee:before {
+  content: "\f211";
+}
+.fa-leanpub:before {
+  content: "\f212";
+}
+.fa-sellsy:before {
+  content: "\f213";
+}
+.fa-shirtsinbulk:before {
+  content: "\f214";
+}
+.fa-simplybuilt:before {
+  content: "\f215";
+}
+.fa-skyatlas:before {
+  content: "\f216";
+}
+.fa-cart-plus:before {
+  content: "\f217";
+}
+.fa-cart-arrow-down:before {
+  content: "\f218";
+}
+.fa-diamond:before {
+  content: "\f219";
+}
+.fa-ship:before {
+  content: "\f21a";
+}
+.fa-user-secret:before {
+  content: "\f21b";
+}
+.fa-motorcycle:before {
+  content: "\f21c";
+}
+.fa-street-view:before {
+  content: "\f21d";
+}
+.fa-heartbeat:before {
+  content: "\f21e";
+}
+.fa-venus:before {
+  content: "\f221";
+}
+.fa-mars:before {
+  content: "\f222";
+}
+.fa-mercury:before {
+  content: "\f223";
+}
+.fa-intersex:before,
+.fa-transgender:before {
+  content: "\f224";
+}
+.fa-transgender-alt:before {
+  content: "\f225";
+}
+.fa-venus-double:before {
+  content: "\f226";
+}
+.fa-mars-double:before {
+  content: "\f227";
+}
+.fa-venus-mars:before {
+  content: "\f228";
+}
+.fa-mars-stroke:before {
+  content: "\f229";
+}
+.fa-mars-stroke-v:before {
+  content: "\f22a";
+}
+.fa-mars-stroke-h:before {
+  content: "\f22b";
+}
+.fa-neuter:before {
+  content: "\f22c";
+}
+.fa-genderless:before {
+  content: "\f22d";
+}
+.fa-facebook-official:before {
+  content: "\f230";
+}
+.fa-pinterest-p:before {
+  content: "\f231";
+}
+.fa-whatsapp:before {
+  content: "\f232";
+}
+.fa-server:before {
+  content: "\f233";
+}
+.fa-user-plus:before {
+  content: "\f234";
+}
+.fa-user-times:before {
+  content: "\f235";
+}
+.fa-hotel:before,
+.fa-bed:before {
+  content: "\f236";
+}
+.fa-viacoin:before {
+  content: "\f237";
+}
+.fa-train:before {
+  content: "\f238";
+}
+.fa-subway:before {
+  content: "\f239";
+}
+.fa-medium:before {
+  content: "\f23a";
+}
+.fa-yc:before,
+.fa-y-combinator:before {
+  content: "\f23b";
+}
+.fa-optin-monster:before {
+  content: "\f23c";
+}
+.fa-opencart:before {
+  content: "\f23d";
+}
+.fa-expeditedssl:before {
+  content: "\f23e";
+}
+.fa-battery-4:before,
+.fa-battery:before,
+.fa-battery-full:before {
+  content: "\f240";
+}
+.fa-battery-3:before,
+.fa-battery-three-quarters:before {
+  content: "\f241";
+}
+.fa-battery-2:before,
+.fa-battery-half:before {
+  content: "\f242";
+}
+.fa-battery-1:before,
+.fa-battery-quarter:before {
+  content: "\f243";
+}
+.fa-battery-0:before,
+.fa-battery-empty:before {
+  content: "\f244";
+}
+.fa-mouse-pointer:before {
+  content: "\f245";
+}
+.fa-i-cursor:before {
+  content: "\f246";
+}
+.fa-object-group:before {
+  content: "\f247";
+}
+.fa-object-ungroup:before {
+  content: "\f248";
+}
+.fa-sticky-note:before {
+  content: "\f249";
+}
+.fa-sticky-note-o:before {
+  content: "\f24a";
+}
+.fa-cc-jcb:before {
+  content: "\f24b";
+}
+.fa-cc-diners-club:before {
+  content: "\f24c";
+}
+.fa-clone:before {
+  content: "\f24d";
+}
+.fa-balance-scale:before {
+  content: "\f24e";
+}
+.fa-hourglass-o:before {
+  content: "\f250";
+}
+.fa-hourglass-1:before,
+.fa-hourglass-start:before {
+  content: "\f251";
+}
+.fa-hourglass-2:before,
+.fa-hourglass-half:before {
+  content: "\f252";
+}
+.fa-hourglass-3:before,
+.fa-hourglass-end:before {
+  content: "\f253";
+}
+.fa-hourglass:before {
+  content: "\f254";
+}
+.fa-hand-grab-o:before,
+.fa-hand-rock-o:before {
+  content: "\f255";
+}
+.fa-hand-stop-o:before,
+.fa-hand-paper-o:before {
+  content: "\f256";
+}
+.fa-hand-scissors-o:before {
+  content: "\f257";
+}
+.fa-hand-lizard-o:before {
+  content: "\f258";
+}
+.fa-hand-spock-o:before {
+  content: "\f259";
+}
+.fa-hand-pointer-o:before {
+  content: "\f25a";
+}
+.fa-hand-peace-o:before {
+  content: "\f25b";
+}
+.fa-trademark:before {
+  content: "\f25c";
+}
+.fa-registered:before {
+  content: "\f25d";
+}
+.fa-creative-commons:before {
+  content: "\f25e";
+}
+.fa-gg:before {
+  content: "\f260";
+}
+.fa-gg-circle:before {
+  content: "\f261";
+}
+.fa-tripadvisor:before {
+  content: "\f262";
+}
+.fa-odnoklassniki:before {
+  content: "\f263";
+}
+.fa-odnoklassniki-square:before {
+  content: "\f264";
+}
+.fa-get-pocket:before {
+  content: "\f265";
+}
+.fa-wikipedia-w:before {
+  content: "\f266";
+}
+.fa-safari:before {
+  content: "\f267";
+}
+.fa-chrome:before {
+  content: "\f268";
+}
+.fa-firefox:before {
+  content: "\f269";
+}
+.fa-opera:before {
+  content: "\f26a";
+}
+.fa-internet-explorer:before {
+  content: "\f26b";
+}
+.fa-tv:before,
+.fa-television:before {
+  content: "\f26c";
+}
+.fa-contao:before {
+  content: "\f26d";
+}
+.fa-500px:before {
+  content: "\f26e";
+}
+.fa-amazon:before {
+  content: "\f270";
+}
+.fa-calendar-plus-o:before {
+  content: "\f271";
+}
+.fa-calendar-minus-o:before {
+  content: "\f272";
+}
+.fa-calendar-times-o:before {
+  content: "\f273";
+}
+.fa-calendar-check-o:before {
+  content: "\f274";
+}
+.fa-industry:before {
+  content: "\f275";
+}
+.fa-map-pin:before {
+  content: "\f276";
+}
+.fa-map-signs:before {
+  content: "\f277";
+}
+.fa-map-o:before {
+  content: "\f278";
+}
+.fa-map:before {
+  content: "\f279";
+}
+.fa-commenting:before {
+  content: "\f27a";
+}
+.fa-commenting-o:before {
+  content: "\f27b";
+}
+.fa-houzz:before {
+  content: "\f27c";
+}
+.fa-vimeo:before {
+  content: "\f27d";
+}
+.fa-black-tie:before {
+  content: "\f27e";
+}
+.fa-fonticons:before {
+  content: "\f280";
+}
+.fa-reddit-alien:before {
+  content: "\f281";
+}
+.fa-edge:before {
+  content: "\f282";
+}
+.fa-credit-card-alt:before {
+  content: "\f283";
+}
+.fa-codiepie:before {
+  content: "\f284";
+}
+.fa-modx:before {
+  content: "\f285";
+}
+.fa-fort-awesome:before {
+  content: "\f286";
+}
+.fa-usb:before {
+  content: "\f287";
+}
+.fa-product-hunt:before {
+  content: "\f288";
+}
+.fa-mixcloud:before {
+  content: "\f289";
+}
+.fa-scribd:before {
+  content: "\f28a";
+}
+.fa-pause-circle:before {
+  content: "\f28b";
+}
+.fa-pause-circle-o:before {
+  content: "\f28c";
+}
+.fa-stop-circle:before {
+  content: "\f28d";
+}
+.fa-stop-circle-o:before {
+  content: "\f28e";
+}
+.fa-shopping-bag:before {
+  content: "\f290";
+}
+.fa-shopping-basket:before {
+  content: "\f291";
+}
+.fa-hashtag:before {
+  content: "\f292";
+}
+.fa-bluetooth:before {
+  content: "\f293";
+}
+.fa-bluetooth-b:before {
+  content: "\f294";
+}
+.fa-percent:before {
+  content: "\f295";
+}
+.fa-gitlab:before {
+  content: "\f296";
+}
+.fa-wpbeginner:before {
+  content: "\f297";
+}
+.fa-wpforms:before {
+  content: "\f298";
+}
+.fa-envira:before {
+  content: "\f299";
+}
+.fa-universal-access:before {
+  content: "\f29a";
+}
+.fa-wheelchair-alt:before {
+  content: "\f29b";
+}
+.fa-question-circle-o:before {
+  content: "\f29c";
+}
+.fa-blind:before {
+  content: "\f29d";
+}
+.fa-audio-description:before {
+  content: "\f29e";
+}
+.fa-volume-control-phone:before {
+  content: "\f2a0";
+}
+.fa-braille:before {
+  content: "\f2a1";
+}
+.fa-assistive-listening-systems:before {
+  content: "\f2a2";
+}
+.fa-asl-interpreting:before,
+.fa-american-sign-language-interpreting:before {
+  content: "\f2a3";
+}
+.fa-deafness:before,
+.fa-hard-of-hearing:before,
+.fa-deaf:before {
+  content: "\f2a4";
+}
+.fa-glide:before {
+  content: "\f2a5";
+}
+.fa-glide-g:before {
+  content: "\f2a6";
+}
+.fa-signing:before,
+.fa-sign-language:before {
+  content: "\f2a7";
+}
+.fa-low-vision:before {
+  content: "\f2a8";
+}
+.fa-viadeo:before {
+  content: "\f2a9";
+}
+.fa-viadeo-square:before {
+  content: "\f2aa";
+}
+.fa-snapchat:before {
+  content: "\f2ab";
+}
+.fa-snapchat-ghost:before {
+  content: "\f2ac";
+}
+.fa-snapchat-square:before {
+  content: "\f2ad";
+}
+.fa-pied-piper:before {
+  content: "\f2ae";
+}
+.fa-first-order:before {
+  content: "\f2b0";
+}
+.fa-yoast:before {
+  content: "\f2b1";
+}
+.fa-themeisle:before {
+  content: "\f2b2";
+}
+.fa-google-plus-circle:before,
+.fa-google-plus-official:before {
+  content: "\f2b3";
+}
+.fa-fa:before,
+.fa-font-awesome:before {
+  content: "\f2b4";
+}
+.fa-handshake-o:before {
+  content: "\f2b5";
+}
+.fa-envelope-open:before {
+  content: "\f2b6";
+}
+.fa-envelope-open-o:before {
+  content: "\f2b7";
+}
+.fa-linode:before {
+  content: "\f2b8";
+}
+.fa-address-book:before {
+  content: "\f2b9";
+}
+.fa-address-book-o:before {
+  content: "\f2ba";
+}
+.fa-vcard:before,
+.fa-address-card:before {
+  content: "\f2bb";
+}
+.fa-vcard-o:before,
+.fa-address-card-o:before {
+  content: "\f2bc";
+}
+.fa-user-circle:before {
+  content: "\f2bd";
+}
+.fa-user-circle-o:before {
+  content: "\f2be";
+}
+.fa-user-o:before {
+  content: "\f2c0";
+}
+.fa-id-badge:before {
+  content: "\f2c1";
+}
+.fa-drivers-license:before,
+.fa-id-card:before {
+  content: "\f2c2";
+}
+.fa-drivers-license-o:before,
+.fa-id-card-o:before {
+  content: "\f2c3";
+}
+.fa-quora:before {
+  content: "\f2c4";
+}
+.fa-free-code-camp:before {
+  content: "\f2c5";
+}
+.fa-telegram:before {
+  content: "\f2c6";
+}
+.fa-thermometer-4:before,
+.fa-thermometer:before,
+.fa-thermometer-full:before {
+  content: "\f2c7";
+}
+.fa-thermometer-3:before,
+.fa-thermometer-three-quarters:before {
+  content: "\f2c8";
+}
+.fa-thermometer-2:before,
+.fa-thermometer-half:before {
+  content: "\f2c9";
+}
+.fa-thermometer-1:before,
+.fa-thermometer-quarter:before {
+  content: "\f2ca";
+}
+.fa-thermometer-0:before,
+.fa-thermometer-empty:before {
+  content: "\f2cb";
+}
+.fa-shower:before {
+  content: "\f2cc";
+}
+.fa-bathtub:before,
+.fa-s15:before,
+.fa-bath:before {
+  content: "\f2cd";
+}
+.fa-podcast:before {
+  content: "\f2ce";
+}
+.fa-window-maximize:before {
+  content: "\f2d0";
+}
+.fa-window-minimize:before {
+  content: "\f2d1";
+}
+.fa-window-restore:before {
+  content: "\f2d2";
+}
+.fa-times-rectangle:before,
+.fa-window-close:before {
+  content: "\f2d3";
+}
+.fa-times-rectangle-o:before,
+.fa-window-close-o:before {
+  content: "\f2d4";
+}
+.fa-bandcamp:before {
+  content: "\f2d5";
+}
+.fa-grav:before {
+  content: "\f2d6";
+}
+.fa-etsy:before {
+  content: "\f2d7";
+}
+.fa-imdb:before {
+  content: "\f2d8";
+}
+.fa-ravelry:before {
+  content: "\f2d9";
+}
+.fa-eercast:before {
+  content: "\f2da";
+}
+.fa-microchip:before {
+  content: "\f2db";
+}
+.fa-snowflake-o:before {
+  content: "\f2dc";
+}
+.fa-superpowers:before {
+  content: "\f2dd";
+}
+.fa-wpexplorer:before {
+  content: "\f2de";
+}
+.fa-meetup:before {
+  content: "\f2e0";
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+}
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
 }
 /*!
 *
@@ -8750,6 +9423,10 @@ div.traceback-wrapper {
   max-width: 800px;
   margin: auto;
 }
+div.traceback-wrapper pre.traceback {
+  max-height: 600px;
+  overflow: auto;
+}
 /**
  * Primary styles
  *
@@ -8775,6 +9452,10 @@ body > #header {
   z-index: 100;
 }
 body > #header #header-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5px;
   padding-bottom: 5px;
   padding-top: 5px;
   box-sizing: border-box;
@@ -8806,13 +9487,16 @@ body > #header .header-bar {
   padding-top: 1px;
   padding-bottom: 1px;
 }
-@media (max-width: 991px) {
-  #ipython_notebook {
-    margin-left: 10px;
-  }
-}
 [dir="rtl"] #ipython_notebook {
+  margin-right: 10px;
+  margin-left: 0;
+}
+[dir="rtl"] #ipython_notebook.pull-left {
   float: right !important;
+  float: right;
+}
+.flex-spacer {
+  flex: 1;
 }
 #noscript {
   width: auto;
@@ -8847,8 +9531,14 @@ body > #header .header-bar {
 input.ui-button {
   padding: 0.3em 0.9em;
 }
+span#kernel_logo_widget {
+  margin: 0 10px;
+}
 span#login_widget {
   float: right;
+}
+[dir="rtl"] span#login_widget {
+  float: left;
 }
 span#login_widget > .button,
 #logout {
@@ -8964,6 +9654,9 @@ span#login_widget > .button .badge,
   overflow: auto;
   flex: 1;
 }
+.modal-header {
+  cursor: move;
+}
 @media (min-width: 768px) {
   .modal .modal-dialog {
     width: 700px;
@@ -8984,6 +9677,19 @@ span#login_widget > .button .badge,
   display: inline-block;
   margin-bottom: -4px;
 }
+[dir="rtl"] .center-nav form.pull-left {
+  float: right !important;
+  float: right;
+}
+[dir="rtl"] .center-nav .navbar-text {
+  float: right;
+}
+[dir="rtl"] .navbar-inner {
+  text-align: right;
+}
+[dir="rtl"] div.text-left {
+  text-align: right;
+}
 /*!
 *
 * IPython tree view
@@ -9000,34 +9706,42 @@ span#login_widget > .button .badge,
   margin: 0;
 }
 .alternate_upload input.fileinput {
-  text-align: center;
-  vertical-align: middle;
-  display: inline;
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  cursor: pointer;
   opacity: 0;
   z-index: 2;
-  width: 12ex;
-  margin-right: -12ex;
+}
+.alternate_upload .btn-xs > input.fileinput {
+  margin: -1px -5px;
 }
 .alternate_upload .btn-upload {
+  position: relative;
   height: 22px;
+}
+::-webkit-file-upload-button {
+  cursor: pointer;
 }
 /**
  * Primary styles
  *
  * Author: Jupyter Development Team
  */
-[dir="rtl"] #tabs li {
-  float: right;
-}
 ul#tabs {
   margin-bottom: 4px;
-}
-[dir="rtl"] ul#tabs {
-  margin-right: 0px;
 }
 ul#tabs a {
   padding-top: 6px;
   padding-bottom: 4px;
+}
+[dir="rtl"] ul#tabs.nav-tabs > li {
+  float: right;
+}
+[dir="rtl"] ul#tabs.nav.nav-tabs {
+  padding-right: 0;
 }
 ul.breadcrumb a:focus,
 ul.breadcrumb a:hover {
@@ -9047,15 +9761,13 @@ ul.breadcrumb span {
 .list_toolbar .tree-buttons {
   padding-top: 1px;
 }
-[dir="rtl"] .list_toolbar .tree-buttons {
+[dir="rtl"] .list_toolbar .tree-buttons .pull-right {
   float: left !important;
+  float: left;
 }
-[dir="rtl"] .list_toolbar .pull-right {
-  padding-top: 1px;
-  float: left !important;
-}
-[dir="rtl"] .list_toolbar .pull-left {
-  float: right !important;
+[dir="rtl"] .list_toolbar .col-sm-4,
+[dir="rtl"] .list_toolbar .col-sm-8 {
+  float: right;
 }
 .dynamic-buttons {
   padding-top: 3px;
@@ -9111,7 +9823,7 @@ ul.breadcrumb span {
 .list_item > div input {
   margin-right: 7px;
   margin-left: 14px;
-  vertical-align: baseline;
+  vertical-align: text-bottom;
   line-height: 22px;
   position: relative;
   top: -1px;
@@ -9121,6 +9833,9 @@ ul.breadcrumb span {
   margin-left: -1px;
   vertical-align: baseline;
   line-height: 22px;
+}
+[dir="rtl"] .list_item > div input {
+  margin-right: 0;
 }
 .new-file input[type=checkbox] {
   visibility: hidden;
@@ -9136,6 +9851,14 @@ ul.breadcrumb span {
   margin-left: 7px;
   line-height: 22px;
   vertical-align: baseline;
+}
+.item_modified {
+  margin-right: 7px;
+  margin-left: 7px;
+}
+[dir="rtl"] .item_modified.pull-right {
+  float: left !important;
+  float: left;
 }
 .item_buttons {
   line-height: 1em;
@@ -9164,6 +9887,14 @@ ul.breadcrumb span {
   margin-right: 7px;
   float: left;
 }
+[dir="rtl"] .item_buttons.pull-right {
+  float: left !important;
+  float: left;
+}
+[dir="rtl"] .item_buttons .kernel-name {
+  margin-left: 7px;
+  float: right;
+}
 .toolbar_info {
   height: 24px;
   line-height: 24px;
@@ -9189,18 +9920,32 @@ ul.breadcrumb span {
   background-color: transparent;
   font-weight: bold;
 }
+.sort_button {
+  display: inline-block;
+  padding-left: 7px;
+}
+[dir="rtl"] .sort_button.pull-right {
+  float: left !important;
+  float: left;
+}
 #tree-selector {
   padding-right: 0px;
-}
-[dir="rtl"] #tree-selector a {
-  float: right;
 }
 #button-select-all {
   min-width: 50px;
 }
+[dir="rtl"] #button-select-all.btn {
+  float: right ;
+}
 #select-all {
   margin-left: 7px;
   margin-right: 2px;
+  margin-top: 2px;
+  height: 16px;
+}
+[dir="rtl"] #select-all.pull-left {
+  float: right !important;
+  float: right;
 }
 .menu_icon {
   margin-right: 2px;
@@ -9218,6 +9963,12 @@ ul.breadcrumb span {
   -moz-osx-font-smoothing: grayscale;
   content: "\f114";
 }
+.folder_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.folder_icon:before.fa-pull-right {
+  margin-left: .3em;
+}
 .folder_icon:before.pull-left {
   margin-right: .3em;
 }
@@ -9234,6 +9985,12 @@ ul.breadcrumb span {
   content: "\f02d";
   position: relative;
   top: -1px;
+}
+.notebook_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.notebook_icon:before.fa-pull-right {
+  margin-left: .3em;
 }
 .notebook_icon:before.pull-left {
   margin-right: .3em;
@@ -9253,6 +10010,12 @@ ul.breadcrumb span {
   top: -1px;
   color: #5cb85c;
 }
+.running_notebook_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.running_notebook_icon:before.fa-pull-right {
+  margin-left: .3em;
+}
 .running_notebook_icon:before.pull-left {
   margin-right: .3em;
 }
@@ -9270,6 +10033,12 @@ ul.breadcrumb span {
   position: relative;
   top: -2px;
 }
+.file_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.file_icon:before.fa-pull-right {
+  margin-left: .3em;
+}
 .file_icon:before.pull-left {
   margin-right: .3em;
 }
@@ -9284,8 +10053,11 @@ ul#new-menu {
   left: auto;
   right: 0;
 }
-[dir="rtl"] #new-menu {
-  text-align: right;
+#new-menu .dropdown-header {
+  font-size: 10px;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 0 0 3px;
+  margin: -3px 20px 0;
 }
 .kernel-menu-icon {
   padding-right: 12px;
@@ -9332,9 +10104,6 @@ ul#new-menu {
 #running .panel-group .panel .panel-body .list_container .list_item:last-child {
   border-bottom: 0px;
 }
-[dir="rtl"] #running .col-sm-8 {
-  float: right !important;
-}
 .delete-button {
   display: none;
 }
@@ -9342,6 +10111,12 @@ ul#new-menu {
   display: none;
 }
 .rename-button {
+  display: none;
+}
+.move-button {
+  display: none;
+}
+.download-button {
   display: none;
 }
 .shutdown-button {
@@ -9384,6 +10159,12 @@ ul#new-menu {
   -moz-osx-font-smoothing: grayscale;
   width: 20px;
 }
+.dirty-indicator.fa-pull-left {
+  margin-right: .3em;
+}
+.dirty-indicator.fa-pull-right {
+  margin-left: .3em;
+}
 .dirty-indicator.pull-left {
   margin-right: .3em;
 }
@@ -9398,6 +10179,12 @@ ul#new-menu {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   width: 20px;
+}
+.dirty-indicator-dirty.fa-pull-left {
+  margin-right: .3em;
+}
+.dirty-indicator-dirty.fa-pull-right {
+  margin-left: .3em;
 }
 .dirty-indicator-dirty.pull-left {
   margin-right: .3em;
@@ -9414,6 +10201,12 @@ ul#new-menu {
   -moz-osx-font-smoothing: grayscale;
   width: 20px;
 }
+.dirty-indicator-clean.fa-pull-left {
+  margin-right: .3em;
+}
+.dirty-indicator-clean.fa-pull-right {
+  margin-left: .3em;
+}
 .dirty-indicator-clean.pull-left {
   margin-right: .3em;
 }
@@ -9428,6 +10221,12 @@ ul#new-menu {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\f00c";
+}
+.dirty-indicator-clean:before.fa-pull-left {
+  margin-right: .3em;
+}
+.dirty-indicator-clean:before.fa-pull-right {
+  margin-left: .3em;
 }
 .dirty-indicator-clean:before.pull-left {
   margin-right: .3em;
@@ -9473,14 +10272,132 @@ ul#new-menu {
     box-shadow: 0px 0px 12px 1px rgba(87, 87, 87, 0.2);
   }
 }
+.CodeMirror-dialog {
+  background-color: #fff;
+}
 /*!
 *
 * IPython notebook
 *
 */
-/* CSS font colors for translated ANSI colors. */
+/* CSS font colors for translated ANSI escape sequences */
+/* The color values are a mix of
+   http://www.xcolors.net/dl/baskerville-ivorylight and
+   http://www.xcolors.net/dl/euphrasia */
+.ansi-black-fg {
+  color: #3E424D;
+}
+.ansi-black-bg {
+  background-color: #3E424D;
+}
+.ansi-black-intense-fg {
+  color: #282C36;
+}
+.ansi-black-intense-bg {
+  background-color: #282C36;
+}
+.ansi-red-fg {
+  color: #E75C58;
+}
+.ansi-red-bg {
+  background-color: #E75C58;
+}
+.ansi-red-intense-fg {
+  color: #B22B31;
+}
+.ansi-red-intense-bg {
+  background-color: #B22B31;
+}
+.ansi-green-fg {
+  color: #00A250;
+}
+.ansi-green-bg {
+  background-color: #00A250;
+}
+.ansi-green-intense-fg {
+  color: #007427;
+}
+.ansi-green-intense-bg {
+  background-color: #007427;
+}
+.ansi-yellow-fg {
+  color: #DDB62B;
+}
+.ansi-yellow-bg {
+  background-color: #DDB62B;
+}
+.ansi-yellow-intense-fg {
+  color: #B27D12;
+}
+.ansi-yellow-intense-bg {
+  background-color: #B27D12;
+}
+.ansi-blue-fg {
+  color: #208FFB;
+}
+.ansi-blue-bg {
+  background-color: #208FFB;
+}
+.ansi-blue-intense-fg {
+  color: #0065CA;
+}
+.ansi-blue-intense-bg {
+  background-color: #0065CA;
+}
+.ansi-magenta-fg {
+  color: #D160C4;
+}
+.ansi-magenta-bg {
+  background-color: #D160C4;
+}
+.ansi-magenta-intense-fg {
+  color: #A03196;
+}
+.ansi-magenta-intense-bg {
+  background-color: #A03196;
+}
+.ansi-cyan-fg {
+  color: #60C6C8;
+}
+.ansi-cyan-bg {
+  background-color: #60C6C8;
+}
+.ansi-cyan-intense-fg {
+  color: #258F8F;
+}
+.ansi-cyan-intense-bg {
+  background-color: #258F8F;
+}
+.ansi-white-fg {
+  color: #C5C1B4;
+}
+.ansi-white-bg {
+  background-color: #C5C1B4;
+}
+.ansi-white-intense-fg {
+  color: #A1A6B2;
+}
+.ansi-white-intense-bg {
+  background-color: #A1A6B2;
+}
+.ansi-default-inverse-fg {
+  color: #FFFFFF;
+}
+.ansi-default-inverse-bg {
+  background-color: #000000;
+}
+.ansi-bold {
+  font-weight: bold;
+}
+.ansi-underline {
+  text-decoration: underline;
+}
+/* The following styles are deprecated an will be removed in a future version */
 .ansibold {
   font-weight: bold;
+}
+.ansi-inverse {
+  outline: 0.5px dotted;
 }
 /* use dark versions for foreground, to improve visibility */
 .ansiblack {
@@ -9559,12 +10476,20 @@ div.cell {
   /* This acts as a spacer between cells, that is outside the border */
   margin: 0px;
   outline: none;
-  border-left-width: 1px;
-  padding-left: 5px;
-  background: linear-gradient(to right, transparent -40px, transparent 1px, transparent 1px, transparent 100%);
+  position: relative;
+  overflow: visible;
+}
+div.cell:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: transparent;
 }
 div.cell.jupyter-soft-selected {
-  border-left-color: #90CAF9;
   border-left-color: #E3F2FD;
   border-left-width: 1px;
   padding-left: 5px;
@@ -9577,27 +10502,39 @@ div.cell.jupyter-soft-selected {
     border-color: transparent;
   }
 }
-div.cell.selected {
+div.cell.selected,
+div.cell.selected.jupyter-soft-selected {
   border-color: #ababab;
-  border-left-width: 0px;
-  padding-left: 6px;
-  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 5px, transparent 5px, transparent 100%);
+}
+div.cell.selected:before,
+div.cell.selected.jupyter-soft-selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #42A5F5;
 }
 @media print {
-  div.cell.selected {
+  div.cell.selected,
+  div.cell.selected.jupyter-soft-selected {
     border-color: transparent;
   }
 }
-div.cell.selected.jupyter-soft-selected {
-  border-left-width: 0;
-  padding-left: 6px;
-  background: linear-gradient(to right, #42A5F5 -40px, #42A5F5 7px, #E3F2FD 7px, #E3F2FD 100%);
-}
 .edit_mode div.cell.selected {
   border-color: #66BB6A;
-  border-left-width: 0px;
-  padding-left: 6px;
-  background: linear-gradient(to right, #66BB6A -40px, #66BB6A 5px, transparent 5px, transparent 100%);
+}
+.edit_mode div.cell.selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #66BB6A;
 }
 @media print {
   .edit_mode div.cell.selected {
@@ -9793,7 +10730,9 @@ div.input_area > div.highlight > pre {
 .CodeMirror-lines {
   /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
   /* we have set a different line-height and want this to scale with that. */
-  padding: 0.4em;
+  /* Note that this should set vertical padding only, since CodeMirror assumes
+       that horizontal padding will be set on CodeMirror pre */
+  padding: 0.4em 0;
 }
 .CodeMirror-linenumber {
   padding: 0 8px 0 4px;
@@ -9803,11 +10742,24 @@ div.input_area > div.highlight > pre {
   border-top-left-radius: 2px;
 }
 .CodeMirror pre {
-  /* In CM3 this went to 4px from 0 in CM2. We need the 0 value because of how we size */
-  /* .CodeMirror-lines */
-  padding: 0;
+  /* In CM3 this went to 4px from 0 in CM2. This sets horizontal padding only,
+    use .CodeMirror-lines for vertical */
+  padding: 0 0.4em;
   border: 0;
   border-radius: 0;
+}
+.CodeMirror-cursor {
+  border-left: 1.4px solid black;
+}
+@media screen and (min-width: 2138px) and (max-width: 4319px) {
+  .CodeMirror-cursor {
+    border-left: 2px solid black;
+  }
+}
+@media screen and (min-width: 4320px) {
+  .CodeMirror-cursor {
+    border-left: 4px solid black;
+  }
 }
 /*
 
@@ -10061,6 +11013,9 @@ div.output_area img.unconfined,
 div.output_area svg.unconfined {
   max-width: none;
 }
+div.output_area .mglyph > img {
+  max-width: none;
+}
 /* This is needed to protect the pre formating from global settings such
    as that of bootstrap */
 .output {
@@ -10099,7 +11054,7 @@ div.output_area svg.unconfined {
 }
 div.output_area pre {
   margin: 0;
-  padding: 0;
+  padding: 1px 0 1px 0;
   border: 0;
   vertical-align: baseline;
   color: black;
@@ -10259,39 +11214,35 @@ div.output_unrecognized a:hover {
 .rendered_html h6:first-child {
   margin-top: 1em;
 }
+.rendered_html ul:not(.list-inline),
+.rendered_html ol:not(.list-inline) {
+  padding-left: 2em;
+}
 .rendered_html ul {
   list-style: disc;
-  margin: 0em 2em;
-  padding-left: 0px;
 }
 .rendered_html ul ul {
   list-style: square;
-  margin: 0em 2em;
+  margin-top: 0;
 }
 .rendered_html ul ul ul {
   list-style: circle;
-  margin: 0em 2em;
 }
 .rendered_html ol {
   list-style: decimal;
-  margin: 0em 2em;
-  padding-left: 0px;
 }
 .rendered_html ol ol {
   list-style: upper-alpha;
-  margin: 0em 2em;
+  margin-top: 0;
 }
 .rendered_html ol ol ol {
   list-style: lower-alpha;
-  margin: 0em 2em;
 }
 .rendered_html ol ol ol ol {
   list-style: lower-roman;
-  margin: 0em 2em;
 }
 .rendered_html ol ol ol ol ol {
   list-style: decimal;
-  margin: 0em 2em;
 }
 .rendered_html * + ul {
   margin-top: 1em;
@@ -10305,14 +11256,23 @@ div.output_unrecognized a:hover {
 }
 .rendered_html pre {
   margin: 1em 2em;
+  padding: 0px;
+  background-color: #fff;
+}
+.rendered_html code {
+  background-color: #eff0f1;
+}
+.rendered_html p code {
+  padding: 1px 5px;
+}
+.rendered_html pre code {
+  background-color: #fff;
 }
 .rendered_html pre,
 .rendered_html code {
   border: 0;
-  background-color: #fff;
   color: #000;
   font-size: 100%;
-  padding: 0px;
 }
 .rendered_html blockquote {
   margin: 1em 2em;
@@ -10320,24 +11280,36 @@ div.output_unrecognized a:hover {
 .rendered_html table {
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid black;
+  border: none;
   border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
 }
 .rendered_html tr,
 .rendered_html th,
 .rendered_html td {
-  border: 1px solid black;
-  border-collapse: collapse;
-  margin: 1em 2em;
-}
-.rendered_html td,
-.rendered_html th {
-  text-align: left;
+  text-align: right;
   vertical-align: middle;
-  padding: 4px;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
 }
 .rendered_html th {
   font-weight: bold;
+}
+.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
 }
 .rendered_html * + table {
   margin-top: 1em;
@@ -10364,6 +11336,15 @@ div.output_unrecognized a:hover {
 .rendered_html img.unconfined,
 .rendered_html svg.unconfined {
   max-width: none;
+}
+.rendered_html .alert {
+  margin-bottom: initial;
+}
+.rendered_html * + .alert {
+  margin-top: 1em;
+}
+[dir="rtl"] .rendered_html p {
+  text-align: right;
 }
 div.text_cell {
   /* Old browsers */
@@ -10418,8 +11399,17 @@ h6:hover .anchor-link {
   overflow-x: auto;
   overflow-y: hidden;
 }
+.text_cell.rendered .rendered_html tr,
+.text_cell.rendered .rendered_html th,
+.text_cell.rendered .rendered_html td {
+  max-width: none;
+}
 .text_cell.unrendered .text_cell_render {
   display: none;
+}
+.text_cell .dropzone .input_area {
+  border: 2px dashed #bababa;
+  margin: -1px;
 }
 .cm-header-1,
 .cm-header-2,
@@ -10556,6 +11546,28 @@ kbd {
   padding-top: 1px;
   padding-bottom: 1px;
 }
+.jupyter-keybindings {
+  padding: 1px;
+  line-height: 24px;
+  border-bottom: 1px solid gray;
+}
+.jupyter-keybindings input {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+.jupyter-keybindings i {
+  padding: 6px;
+}
+.well code {
+  background-color: #ffffff;
+  border-color: #ababab;
+  border-width: 1px;
+  border-style: solid;
+  padding: 2px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
 /* CSS for the cell toolbar */
 .celltoolbar {
   border: thin solid #CFCFCF;
@@ -10688,6 +11700,152 @@ select[multiple].celltoolbar select {
   margin-left: 5px;
   margin-right: 5px;
 }
+.tags_button_container {
+  width: 100%;
+  display: flex;
+}
+.tag-container {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  overflow: hidden;
+  position: relative;
+}
+.tag-container > * {
+  margin: 0 4px;
+}
+.remove-tag-btn {
+  margin-left: 4px;
+}
+.tags-input {
+  display: flex;
+}
+.cell-tag:last-child:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  width: 40px;
+  height: 100%;
+  /* Fade to background color of cell toolbar */
+  background: linear-gradient(to right, rgba(0, 0, 0, 0), #EEE);
+}
+.tags-input > * {
+  margin-left: 4px;
+}
+.cell-tag,
+.tags-input input,
+.tags-input button {
+  display: block;
+  width: 100%;
+  height: 32px;
+  padding: 6px 12px;
+  font-size: 13px;
+  line-height: 1.42857143;
+  color: #555555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 1px;
+  box-shadow: none;
+  width: inherit;
+  font-size: inherit;
+  height: 22px;
+  line-height: 22px;
+  padding: 0px 4px;
+  display: inline-block;
+}
+.cell-tag:focus,
+.tags-input input:focus,
+.tags-input button:focus {
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+.cell-tag::-moz-placeholder,
+.tags-input input::-moz-placeholder,
+.tags-input button::-moz-placeholder {
+  color: #999;
+  opacity: 1;
+}
+.cell-tag:-ms-input-placeholder,
+.tags-input input:-ms-input-placeholder,
+.tags-input button:-ms-input-placeholder {
+  color: #999;
+}
+.cell-tag::-webkit-input-placeholder,
+.tags-input input::-webkit-input-placeholder,
+.tags-input button::-webkit-input-placeholder {
+  color: #999;
+}
+.cell-tag::-ms-expand,
+.tags-input input::-ms-expand,
+.tags-input button::-ms-expand {
+  border: 0;
+  background-color: transparent;
+}
+.cell-tag[disabled],
+.tags-input input[disabled],
+.tags-input button[disabled],
+.cell-tag[readonly],
+.tags-input input[readonly],
+.tags-input button[readonly],
+fieldset[disabled] .cell-tag,
+fieldset[disabled] .tags-input input,
+fieldset[disabled] .tags-input button {
+  background-color: #eeeeee;
+  opacity: 1;
+}
+.cell-tag[disabled],
+.tags-input input[disabled],
+.tags-input button[disabled],
+fieldset[disabled] .cell-tag,
+fieldset[disabled] .tags-input input,
+fieldset[disabled] .tags-input button {
+  cursor: not-allowed;
+}
+textarea.cell-tag,
+textarea.tags-input input,
+textarea.tags-input button {
+  height: auto;
+}
+select.cell-tag,
+select.tags-input input,
+select.tags-input button {
+  height: 30px;
+  line-height: 30px;
+}
+textarea.cell-tag,
+textarea.tags-input input,
+textarea.tags-input button,
+select[multiple].cell-tag,
+select[multiple].tags-input input,
+select[multiple].tags-input button {
+  height: auto;
+}
+.cell-tag,
+.tags-input button {
+  padding: 0px 4px;
+}
+.cell-tag {
+  background-color: #fff;
+  white-space: nowrap;
+}
+.tags-input input[type=text]:focus {
+  outline: none;
+  box-shadow: none;
+  border-color: #ccc;
+}
 .completions {
   position: absolute;
   z-index: 110;
@@ -10713,16 +11871,28 @@ select[multiple].celltoolbar select {
 .completions select option.context {
   color: #286090;
 }
-#kernel_logo_widget {
-  float: right !important;
-  float: right;
-}
 #kernel_logo_widget .current_kernel_logo {
   display: none;
   margin-top: -1px;
   margin-bottom: -1px;
   width: 32px;
   height: 32px;
+}
+[dir="rtl"] #kernel_logo_widget {
+  float: left !important;
+  float: left;
+}
+.modal .modal-body .move-path {
+  display: flex;
+  flex-direction: row;
+  justify-content: space;
+  align-items: center;
+}
+.modal .modal-body .move-path .server-root {
+  padding-right: 20px;
+}
+.modal .modal-body .move-path .path-input {
+  flex: 1;
 }
 #menubar {
   box-sizing: border-box;
@@ -10744,11 +11914,41 @@ select[multiple].celltoolbar select {
 #menubar .navbar-collapse {
   clear: left;
 }
+[dir="rtl"] #menubar .navbar-toggle {
+  float: right;
+}
+[dir="rtl"] #menubar .navbar-collapse {
+  clear: right;
+}
+[dir="rtl"] #menubar .navbar-nav {
+  float: right;
+}
+[dir="rtl"] #menubar .nav {
+  padding-right: 0px;
+}
+[dir="rtl"] #menubar .navbar-nav > li {
+  float: right;
+}
+[dir="rtl"] #menubar .navbar-right {
+  float: left !important;
+}
+[dir="rtl"] ul.dropdown-menu {
+  text-align: right;
+  left: auto;
+}
+[dir="rtl"] ul#new-menu.dropdown-menu {
+  right: auto;
+  left: 0;
+}
 .nav-wrapper {
   border-bottom: 1px solid #e7e7e7;
 }
 i.menu-icon {
   padding-top: 4px;
+}
+[dir="rtl"] i.menu-icon.pull-right {
+  float: left !important;
+  float: left;
 }
 ul#help_menu li a {
   overflow: hidden;
@@ -10756,6 +11956,17 @@ ul#help_menu li a {
 }
 ul#help_menu li a i {
   margin-right: -1.2em;
+}
+[dir="rtl"] ul#help_menu li a {
+  padding-left: 2.2em;
+}
+[dir="rtl"] ul#help_menu li a i {
+  margin-right: 0;
+  margin-left: -1.2em;
+}
+[dir="rtl"] ul#help_menu li a i.pull-right {
+  float: left !important;
+  float: left;
 }
 .dropdown-submenu {
   position: relative;
@@ -10765,6 +11976,10 @@ ul#help_menu li a i {
   left: 100%;
   margin-top: -6px;
   margin-left: -1px;
+}
+[dir="rtl"] .dropdown-submenu > .dropdown-menu {
+  right: 100%;
+  margin-right: -1px;
 }
 .dropdown-submenu:hover > .dropdown-menu {
   display: block;
@@ -10783,11 +11998,23 @@ ul#help_menu li a i {
   margin-top: 2px;
   margin-right: -10px;
 }
+.dropdown-submenu > a:after.fa-pull-left {
+  margin-right: .3em;
+}
+.dropdown-submenu > a:after.fa-pull-right {
+  margin-left: .3em;
+}
 .dropdown-submenu > a:after.pull-left {
   margin-right: .3em;
 }
 .dropdown-submenu > a:after.pull-right {
   margin-left: .3em;
+}
+[dir="rtl"] .dropdown-submenu > a:after {
+  float: left;
+  content: "\f0d9";
+  margin-right: 0;
+  margin-left: -10px;
 }
 .dropdown-submenu:hover > a:after {
   color: #262626;
@@ -10804,6 +12031,10 @@ ul#help_menu li a i {
   float: right;
   z-index: 10;
 }
+[dir="rtl"] #notification_area {
+  float: left !important;
+  float: left;
+}
 .indicator_area {
   float: right !important;
   float: right;
@@ -10814,6 +12045,10 @@ ul#help_menu li a i {
   z-index: 10;
   text-align: center;
   width: auto;
+}
+[dir="rtl"] .indicator_area {
+  float: left !important;
+  float: left;
 }
 #kernel_indicator {
   float: right !important;
@@ -10831,6 +12066,12 @@ ul#help_menu li a i {
   padding-left: 5px;
   padding-right: 5px;
 }
+[dir="rtl"] #kernel_indicator {
+  float: left !important;
+  float: left;
+  border-left: 0;
+  border-right: 1px solid;
+}
 #modal_indicator {
   float: right !important;
   float: right;
@@ -10841,6 +12082,10 @@ ul#help_menu li a i {
   z-index: 10;
   text-align: center;
   width: auto;
+}
+[dir="rtl"] #modal_indicator {
+  float: left !important;
+  float: left;
 }
 #readonly-indicator {
   float: right !important;
@@ -10871,6 +12116,12 @@ ul#help_menu li a i {
   -moz-osx-font-smoothing: grayscale;
   content: "\f040";
 }
+.edit_mode .modal_indicator:before.fa-pull-left {
+  margin-right: .3em;
+}
+.edit_mode .modal_indicator:before.fa-pull-right {
+  margin-left: .3em;
+}
 .edit_mode .modal_indicator:before.pull-left {
   margin-right: .3em;
 }
@@ -10885,6 +12136,12 @@ ul#help_menu li a i {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: ' ';
+}
+.command_mode .modal_indicator:before.fa-pull-left {
+  margin-right: .3em;
+}
+.command_mode .modal_indicator:before.fa-pull-right {
+  margin-left: .3em;
 }
 .command_mode .modal_indicator:before.pull-left {
   margin-right: .3em;
@@ -10901,6 +12158,12 @@ ul#help_menu li a i {
   -moz-osx-font-smoothing: grayscale;
   content: "\f10c";
 }
+.kernel_idle_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.kernel_idle_icon:before.fa-pull-right {
+  margin-left: .3em;
+}
 .kernel_idle_icon:before.pull-left {
   margin-right: .3em;
 }
@@ -10915,6 +12178,12 @@ ul#help_menu li a i {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\f111";
+}
+.kernel_busy_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.kernel_busy_icon:before.fa-pull-right {
+  margin-left: .3em;
 }
 .kernel_busy_icon:before.pull-left {
   margin-right: .3em;
@@ -10931,6 +12200,12 @@ ul#help_menu li a i {
   -moz-osx-font-smoothing: grayscale;
   content: "\f1e2";
 }
+.kernel_dead_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.kernel_dead_icon:before.fa-pull-right {
+  margin-left: .3em;
+}
 .kernel_dead_icon:before.pull-left {
   margin-right: .3em;
 }
@@ -10945,6 +12220,12 @@ ul#help_menu li a i {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\f127";
+}
+.kernel_disconnected_icon:before.fa-pull-left {
+  margin-right: .3em;
+}
+.kernel_disconnected_icon:before.fa-pull-right {
+  margin-left: .3em;
 }
 .kernel_disconnected_icon:before.pull-left {
   margin-right: .3em;
@@ -11335,27 +12616,46 @@ div#pager .ui-resizable-handle::after {
   flex: 1;
 }
 span.save_widget {
-  margin-top: 6px;
+  height: 30px;
+  margin-top: 4px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+  width: 50%;
+  flex: 1;
 }
 span.save_widget span.filename {
-  height: 1em;
+  height: 100%;
   line-height: 1em;
-  padding: 3px;
   margin-left: 16px;
   border: none;
   font-size: 146.5%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
   border-radius: 2px;
 }
 span.save_widget span.filename:hover {
   background-color: #e6e6e6;
 }
+[dir="rtl"] span.save_widget.pull-left {
+  float: right !important;
+  float: right;
+}
+[dir="rtl"] span.save_widget span.filename {
+  margin-left: 0;
+  margin-right: 16px;
+}
 span.checkpoint_status,
 span.autosave_status {
   font-size: small;
+  white-space: nowrap;
+  padding: 0 5px;
 }
 @media (max-width: 767px) {
   span.save_widget {
     font-size: small;
+    padding: 0 0 0 5px;
   }
   span.checkpoint_status,
   span.autosave_status {
@@ -11399,6 +12699,9 @@ span.autosave_status {
   margin-top: 0px;
   margin-left: 5px;
 }
+.toolbar-btn-label {
+  margin-left: 6px;
+}
 #maintoolbar {
   margin-bottom: -3px;
   margin-top: -8px;
@@ -11418,6 +12721,10 @@ span.autosave_status {
 }
 .select-xs {
   height: 24px;
+}
+[dir="rtl"] .btn-group > .btn,
+.btn-group-vertical > .btn {
+  float: right;
 }
 .pulse,
 .dropdown-menu > li > a.pulse,
@@ -11568,6 +12875,10 @@ ul.typeahead-list i {
   margin-left: -10px;
   width: 18px;
 }
+[dir="rtl"] ul.typeahead-list i {
+  margin-left: 0;
+  margin-right: -10px;
+}
 ul.typeahead-list {
   max-height: 80vh;
   overflow: auto;
@@ -11576,6 +12887,13 @@ ul.typeahead-list > li > a {
   /** Firefox bug **/
   /* see https://github.com/jupyter/notebook/issues/559 */
   white-space: normal;
+}
+ul.typeahead-list  > li > a.pull-right {
+  float: left !important;
+  float: left;
+}
+[dir="rtl"] .typeahead-list {
+  text-align: right;
 }
 .cmd-palette .modal-body {
   padding: 7px;
@@ -11587,10 +12905,19 @@ ul.typeahead-list > li > a {
   outline: none;
 }
 .no-shortcut {
-  display: none;
+  min-width: 20px;
+  color: transparent;
+}
+[dir="rtl"] .no-shortcut.pull-right {
+  float: left !important;
+  float: left;
+}
+[dir="rtl"] .command-shortcut.pull-right {
+  float: left !important;
+  float: left;
 }
 .command-shortcut:before {
-  content: "(command)";
+  content: "(command mode)";
   padding-right: 3px;
   color: #777777;
 }
@@ -11599,6 +12926,10 @@ ul.typeahead-list > li > a {
   padding-right: 3px;
   color: #777777;
 }
+[dir="rtl"] .edit-shortcut.pull-right {
+  float: left !important;
+  float: left;
+}
 #find-and-replace #replace-preview .match,
 #find-and-replace #replace-preview .insert {
   background-color: #BBDEFB;
@@ -11606,6 +12937,12 @@ ul.typeahead-list > li > a {
   border-style: solid;
   border-width: 1px;
   border-radius: 0px;
+}
+[dir="ltr"] #find-and-replace .input-group-btn + .form-control {
+  border-left: none;
+}
+[dir="rtl"] #find-and-replace .input-group-btn + .form-control {
+  border-right: none;
 }
 #find-and-replace #replace-preview .replace .match {
   background-color: #FFCDD2;
@@ -11730,45 +13067,6 @@ ul.typeahead-list > li > a {
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
-    </style>
-<style type="text/css">
-    
-/* Temporary definitions which will become obsolete with Notebook release 5.0 */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-bold { font-weight: bold; }
-
     </style>
 
 
@@ -11902,17 +13200,15 @@ a.anchor-link {
 <div class="slides">
 <section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><h1>Table of Contents<span class="tocSkip"></span></h1></p>
-<div class="toc"><ul class="toc-item"><li><span><a href="#Chapter-Goals" data-toc-modified-id="Chapter-Goals-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Chapter Goals</a></span></li><li><span><a href="#Chapter-Outline" data-toc-modified-id="Chapter-Outline-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Chapter Outline</a></span></li><li><span><a href="#Getting-and-Storing-a-Dataset" data-toc-modified-id="Getting-and-Storing-a-Dataset-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Getting and Storing a Dataset</a></span><ul class="toc-item"><li><span><a href="#Getting-Stock-Data" data-toc-modified-id="Getting-Stock-Data-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Getting Stock Data</a></span></li></ul></li><li><span><a href="#Defining-Stationarity" data-toc-modified-id="Defining-Stationarity-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Defining Stationarity</a></span><ul class="toc-item"><li><span><a href="#Are-These-Series-Stationary?" data-toc-modified-id="Are-These-Series-Stationary?-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>Are These Series Stationary?</a></span></li></ul></li><li><span><a href="#How-Asset-Returns-Violate-Rules-of-Stationarity" data-toc-modified-id="How-Asset-Returns-Violate-Rules-of-Stationarity-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>How Asset Returns Violate Rules of Stationarity</a></span><ul class="toc-item"><li><span><a href="#Do-The-Means-and-Standard-Deviations-vary-with-Time?" data-toc-modified-id="Do-The-Means-and-Standard-Deviations-vary-with-Time?-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>Do The Means and Standard Deviations vary with Time?</a></span></li><li><span><a href="#The-annual-means-and-standard-deviations-vary-signficantly-across-years." data-toc-modified-id="The-annual-means-and-standard-deviations-vary-signficantly-across-years.-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>The annual means and standard deviations vary signficantly across years.</a></span></li><li><span><a href="#Examining-Autocorrelation" data-toc-modified-id="Examining-Autocorrelation-5.3"><span class="toc-item-num">5.3&nbsp;&nbsp;</span>Examining Autocorrelation</a></span></li><li><span><a href="#What-does-this-mean?" data-toc-modified-id="What-does-this-mean?-5.4"><span class="toc-item-num">5.4&nbsp;&nbsp;</span>What does this mean?</a></span></li></ul></li><li><span><a href="#Conclusions" data-toc-modified-id="Conclusions-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>Conclusions</a></span></li><li><span><a href="#Resources-and-Citations" data-toc-modified-id="Resources-and-Citations-7"><span class="toc-item-num">7&nbsp;&nbsp;</span>Resources and Citations</a></span></li></ul></div>
+<div class="toc"><ul class="toc-item"><li><span><a href="#Chapter-Goals" data-toc-modified-id="Chapter-Goals-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Chapter Goals</a></span></li><li><span><a href="#Getting-and-Storing-a-Dataset" data-toc-modified-id="Getting-and-Storing-a-Dataset-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Getting and Storing a Dataset</a></span><ul class="toc-item"><li><span><a href="#Getting-Stock-Data" data-toc-modified-id="Getting-Stock-Data-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Getting Stock Data</a></span></li></ul></li><li><span><a href="#Defining-Stationarity" data-toc-modified-id="Defining-Stationarity-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Defining Stationarity</a></span><ul class="toc-item"><li><span><a href="#Are-These-Series-Stationary?" data-toc-modified-id="Are-These-Series-Stationary?-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Are These Series Stationary?</a></span></li></ul></li><li><span><a href="#How-Asset-Returns-Violate-Rules-of-Stationarity" data-toc-modified-id="How-Asset-Returns-Violate-Rules-of-Stationarity-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>How Asset Returns Violate Rules of Stationarity</a></span><ul class="toc-item"><li><span><a href="#Do-The-Means-and-Standard-Deviations-vary-with-Time?" data-toc-modified-id="Do-The-Means-and-Standard-Deviations-vary-with-Time?-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>Do The Means and Standard Deviations vary with Time?</a></span></li><li><span><a href="#The-annual-means-and-standard-deviations-vary-signficantly-across-years." data-toc-modified-id="The-annual-means-and-standard-deviations-vary-signficantly-across-years.-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>The annual means and standard deviations vary signficantly across years.</a></span></li><li><span><a href="#Examining-Autocorrelation" data-toc-modified-id="Examining-Autocorrelation-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>Examining Autocorrelation</a></span></li><li><span><a href="#What-does-this-mean?" data-toc-modified-id="What-does-this-mean?-4.4"><span class="toc-item-num">4.4&nbsp;&nbsp;</span>What does this mean?</a></span></li></ul></li><li><span><a href="#Conclusions" data-toc-modified-id="Conclusions-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Conclusions</a></span></li><li><span><a href="#Resources-and-Citations" data-toc-modified-id="Resources-and-Citations-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>Resources and Citations</a></span></li></ul></div>
 </div>
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Chapter-Goals">Chapter Goals<a class="anchor-link" href="#Chapter-Goals">&#182;</a></h2><ol>
 <li>Understand the basics of stationarity</li>
@@ -11925,22 +13221,7 @@ a.anchor-link {
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Chapter-Outline">Chapter Outline<a class="anchor-link" href="#Chapter-Outline">&#182;</a></h2><ol>
-<li>Getting and Storing a Dataset</li>
-<li>Defining Stationarity</li>
-<li>How Asset Returns Violate Rules of Stationarity</li>
-<li>Conclusions</li>
-</ol>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Getting-and-Storing-a-Dataset">Getting and Storing a Dataset<a class="anchor-link" href="#Getting-and-Storing-a-Dataset">&#182;</a></h2><p>Start by importing the required modules and tools</p>
 
@@ -11948,8 +13229,7 @@ a.anchor-link {
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Getting-Stock-Data">Getting Stock Data<a class="anchor-link" href="#Getting-Stock-Data">&#182;</a></h3><p>Morningstar, Yahoo and Google finance data are now deprecated. To get free adjusted close data, sign up with <a href="https://www.tiingo.com/account/billing/pricing">Tiingo</a> to get an API key. We'll get the closing price for multiple ETFs. In this case I have already downloaded and saved the prices and returns for several ETFs.</p>
 
@@ -11966,7 +13246,7 @@ a.anchor-link {
 <span class="n">load_dotenv</span><span class="p">()</span>  <span class="c1"># to use hidden api key</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -11976,7 +13256,7 @@ a.anchor-link {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[12]:</div>
+    <div class="prompt output_prompt">Out[12]:</div>
 
 
 
@@ -11989,16 +13269,16 @@ a.anchor-link {
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
 
 
-<div id="22f5959f-fcca-4a40-aa45-df8cf6bfe3b7"></div>
+<div id="b4db6ed8-5e46-4358-b76e-ba50747ec040"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#22f5959f-fcca-4a40-aa45-df8cf6bfe3b7');
+var element = $('#b4db6ed8-5e46-4358-b76e-ba50747ec040');
 
         setTimeout(function() {
             var nbb_cell_id = 12;
@@ -12023,7 +13303,7 @@ var element = $('#22f5959f-fcca-4a40-aa45-df8cf6bfe3b7');
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">infp</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">data_dir</span> <span class="o">/</span> <span class="s2">&quot;tiingo_etf_returns_ending_2017-12-31.parq&quot;</span><span class="p">)</span>
@@ -12033,7 +13313,7 @@ var element = $('#22f5959f-fcca-4a40-aa45-df8cf6bfe3b7');
 <span class="n">cprint</span><span class="p">(</span><span class="n">R</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12043,7 +13323,7 @@ var element = $('#22f5959f-fcca-4a40-aa45-df8cf6bfe3b7');
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -12079,19 +13359,19 @@ None
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
 
 
-<div id="3ef0ee2c-4463-49d0-8b5e-ffb1d5123cb1"></div>
+<div id="33309fdd-cf20-4eba-a95b-8eb3107ddead"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#3ef0ee2c-4463-49d0-8b5e-ffb1d5123cb1');
+var element = $('#33309fdd-cf20-4eba-a95b-8eb3107ddead');
 
         setTimeout(function() {
-            var nbb_cell_id = 13;
+            var nbb_cell_id = 3;
             var nbb_formatted_code = "infp = Path(data_dir / \"tiingo_etf_returns_ending_2017-12-31.parq\")\nR = pd.read_parquet(infp).assign(\n    year=lambda df: df.index.year\n)  # add year column for later conv.\ncprint(R)";
             var nbb_cells = Jupyter.notebook.get_cells();
             for (var i = 0; i < nbb_cells.length; ++i) {
@@ -12119,7 +13399,7 @@ var element = $('#3ef0ee2c-4463-49d0-8b5e-ffb1d5123cb1');
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">visual_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">as_posix</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;/visuals/01_Motivation/&quot;</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12129,16 +13409,16 @@ var element = $('#3ef0ee2c-4463-49d0-8b5e-ffb1d5123cb1');
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
 
 
-<div id="b5328fe5-6aa5-4031-803d-488fc821b591"></div>
+<div id="b897566b-c302-43bd-b30d-5f8c0fe5897c"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#b5328fe5-6aa5-4031-803d-488fc821b591');
+var element = $('#b897566b-c302-43bd-b30d-5f8c0fe5897c');
 
         setTimeout(function() {
             var nbb_cell_id = 14;
@@ -12162,8 +13442,7 @@ var element = $('#b5328fe5-6aa5-4031-803d-488fc821b591');
 
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>After saving the data we can load back into the environment like so...</p>
 
@@ -12182,7 +13461,7 @@ var element = $('#b5328fe5-6aa5-4031-803d-488fc821b591');
 <span class="n">cprint</span><span class="p">(</span><span class="n">R</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12192,7 +13471,7 @@ var element = $('#b5328fe5-6aa5-4031-803d-488fc821b591');
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
@@ -12228,16 +13507,16 @@ None
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
 
 
-<div id="3fd89169-aeca-4b3b-a7ee-cd4d264d17b7"></div>
+<div id="0b2c7922-36c7-49ca-a0a7-aa3c77c38727"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#3fd89169-aeca-4b3b-a7ee-cd4d264d17b7');
+var element = $('#0b2c7922-36c7-49ca-a0a7-aa3c77c38727');
 
         setTimeout(function() {
             var nbb_cell_id = 15;
@@ -12261,8 +13540,7 @@ var element = $('#3fd89169-aeca-4b3b-a7ee-cd4d264d17b7');
 
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Please be aware that the load function used above immediately converts the <code>parquet</code> file into a <code>pandas.DataFrame</code> object. For smaller datasets and modern laptop hardware that is not a problem (less than 1 <code>gb</code>). However once your dataset starts getting into the multi <code>gb</code> range one might experience delayed performance in which case I would recommend learning and using <a href="http://dask.pydata.org/en/latest/">Dask</a>.</p>
 
@@ -12270,8 +13548,7 @@ var element = $('#3fd89169-aeca-4b3b-a7ee-cd4d264d17b7');
 </div>
 </div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Defining-Stationarity">Defining Stationarity<a class="anchor-link" href="#Defining-Stationarity">&#182;</a></h2><p>The following image sums up this concept best. The simple intuition is that the series mean and variance should NOT change as a result of passing time. The covariance between returns in the time series should also NOT be a function of time.</p>
 
@@ -12286,7 +13563,7 @@ var element = $('#3fd89169-aeca-4b3b-a7ee-cd4d264d17b7');
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">media</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12296,7 +13573,7 @@ var element = $('#3fd89169-aeca-4b3b-a7ee-cd4d264d17b7');
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[89]:</div>
+    <div class="prompt output_prompt">Out[89]:</div>
 
 
 
@@ -12313,16 +13590,16 @@ height=400
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
 
 
-<div id="3c0bfb91-87e0-4bc1-9e82-c17273e0c810"></div>
+<div id="e5692b06-2ab3-4f5d-a56e-ae2e582aa368"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#3c0bfb91-87e0-4bc1-9e82-c17273e0c810');
+var element = $('#e5692b06-2ab3-4f5d-a56e-ae2e582aa368');
 
         setTimeout(function() {
             var nbb_cell_id = 89;
@@ -12346,8 +13623,7 @@ var element = $('#3c0bfb91-87e0-4bc1-9e82-c17273e0c810');
 
 </div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Are-These-Series-Stationary?">Are These Series Stationary?<a class="anchor-link" href="#Are-These-Series-Stationary?">&#182;</a></h3>
 </div>
@@ -12361,7 +13637,7 @@ var element = $('#3c0bfb91-87e0-4bc1-9e82-c17273e0c810');
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">visual_dir</span> <span class="o">+</span> <span class="s2">&quot;s1.png&quot;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12371,7 +13647,7 @@ var element = $('#3c0bfb91-87e0-4bc1-9e82-c17273e0c810');
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[98]:</div>
+    <div class="prompt output_prompt">Out[98]:</div>
 
 
 
@@ -12386,16 +13662,16 @@ var element = $('#3c0bfb91-87e0-4bc1-9e82-c17273e0c810');
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
 
 
-<div id="f357b461-e577-4a82-bf9b-7d17ed4938dd"></div>
+<div id="bdab2465-51fe-4789-8526-b1ad83dd6d49"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#f357b461-e577-4a82-bf9b-7d17ed4938dd');
+var element = $('#bdab2465-51fe-4789-8526-b1ad83dd6d49');
 
         setTimeout(function() {
             var nbb_cell_id = 98;
@@ -12426,7 +13702,7 @@ var element = $('#f357b461-e577-4a82-bf9b-7d17ed4938dd');
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">KPSS</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12436,7 +13712,7 @@ var element = $('#f357b461-e577-4a82-bf9b-7d17ed4938dd');
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[20]:</div>
+    <div class="prompt output_prompt">Out[20]:</div>
 
 
 
@@ -12459,16 +13735,16 @@ var element = $('#f357b461-e577-4a82-bf9b-7d17ed4938dd');
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
 
 
-<div id="fd62e36e-5ea4-4b27-8f6c-67c47e223989"></div>
+<div id="30a5ff31-d314-48d1-bb72-dc426a3f81f8"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#fd62e36e-5ea4-4b27-8f6c-67c47e223989');
+var element = $('#30a5ff31-d314-48d1-bb72-dc426a3f81f8');
 
         setTimeout(function() {
             var nbb_cell_id = 20;
@@ -12499,7 +13775,7 @@ var element = $('#fd62e36e-5ea4-4b27-8f6c-67c47e223989');
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">visual_dir</span> <span class="o">+</span> <span class="s2">&quot;s2.png&quot;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12509,7 +13785,7 @@ var element = $('#fd62e36e-5ea4-4b27-8f6c-67c47e223989');
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[100]:</div>
+    <div class="prompt output_prompt">Out[100]:</div>
 
 
 
@@ -12524,16 +13800,16 @@ var element = $('#fd62e36e-5ea4-4b27-8f6c-67c47e223989');
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
 
 
-<div id="bb33d7ed-9e6b-4ef3-a8f7-d5f9c436a126"></div>
+<div id="ba18540d-69f5-4b46-ab02-7a00c1a76f82"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#bb33d7ed-9e6b-4ef3-a8f7-d5f9c436a126');
+var element = $('#ba18540d-69f5-4b46-ab02-7a00c1a76f82');
 
         setTimeout(function() {
             var nbb_cell_id = 100;
@@ -12565,7 +13841,7 @@ var element = $('#bb33d7ed-9e6b-4ef3-a8f7-d5f9c436a126');
 <span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">s2</span><span class="p">,</span> <span class="n">shade</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12575,7 +13851,7 @@ var element = $('#bb33d7ed-9e6b-4ef3-a8f7-d5f9c436a126');
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -12590,16 +13866,16 @@ var element = $('#bb33d7ed-9e6b-4ef3-a8f7-d5f9c436a126');
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
 
 
-<div id="8ec74f9f-e394-4aa5-b9e1-a87afb43f313"></div>
+<div id="0753973f-6c15-422c-b44f-d73bed8de1f5"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#8ec74f9f-e394-4aa5-b9e1-a87afb43f313');
+var element = $('#0753973f-6c15-422c-b44f-d73bed8de1f5');
 
         setTimeout(function() {
             var nbb_cell_id = 101;
@@ -12630,7 +13906,7 @@ var element = $('#8ec74f9f-e394-4aa5-b9e1-a87afb43f313');
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">visual_dir</span> <span class="o">+</span> <span class="s2">&quot;s3.png&quot;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12640,7 +13916,7 @@ var element = $('#8ec74f9f-e394-4aa5-b9e1-a87afb43f313');
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[103]:</div>
+    <div class="prompt output_prompt">Out[103]:</div>
 
 
 
@@ -12655,16 +13931,16 @@ var element = $('#8ec74f9f-e394-4aa5-b9e1-a87afb43f313');
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
 
 
-<div id="70f74d2c-41b4-4b4c-9feb-7577e5487628"></div>
+<div id="8af49a1a-32e1-48ef-8d87-62e9764054b0"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#70f74d2c-41b4-4b4c-9feb-7577e5487628');
+var element = $('#8af49a1a-32e1-48ef-8d87-62e9764054b0');
 
         setTimeout(function() {
             var nbb_cell_id = 103;
@@ -12695,7 +13971,7 @@ var element = $('#70f74d2c-41b4-4b4c-9feb-7577e5487628');
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">KPSS</span><span class="p">(</span><span class="n">s3</span><span class="p">)</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12705,7 +13981,7 @@ var element = $('#70f74d2c-41b4-4b4c-9feb-7577e5487628');
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[104]:</div>
+    <div class="prompt output_prompt">Out[104]:</div>
 
 
 
@@ -12728,16 +14004,16 @@ var element = $('#70f74d2c-41b4-4b4c-9feb-7577e5487628');
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
 
 
-<div id="886c9e82-fd41-4a9c-9c6e-27c0a17884fd"></div>
+<div id="8fe951f5-45f4-429b-9fe4-95a29703ed14"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#886c9e82-fd41-4a9c-9c6e-27c0a17884fd');
+var element = $('#8fe951f5-45f4-429b-9fe4-95a29703ed14');
 
         setTimeout(function() {
             var nbb_cell_id = 104;
@@ -12769,7 +14045,7 @@ var element = $('#886c9e82-fd41-4a9c-9c6e-27c0a17884fd');
 <span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">s3</span><span class="p">,</span> <span class="n">shade</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12779,7 +14055,7 @@ var element = $('#886c9e82-fd41-4a9c-9c6e-27c0a17884fd');
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -12794,16 +14070,16 @@ var element = $('#886c9e82-fd41-4a9c-9c6e-27c0a17884fd');
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
 
 
-<div id="e0c4bd50-8264-4e15-bcc3-6e2652ab8e54"></div>
+<div id="08e10526-59f4-4d56-ab6b-c1779fff740b"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#e0c4bd50-8264-4e15-bcc3-6e2652ab8e54');
+var element = $('#08e10526-59f4-4d56-ab6b-c1779fff740b');
 
         setTimeout(function() {
             var nbb_cell_id = 105;
@@ -12834,7 +14110,7 @@ var element = $('#e0c4bd50-8264-4e15-bcc3-6e2652ab8e54');
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">visual_dir</span> <span class="o">+</span> <span class="s2">&quot;s4.png&quot;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12844,7 +14120,7 @@ var element = $('#e0c4bd50-8264-4e15-bcc3-6e2652ab8e54');
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[107]:</div>
+    <div class="prompt output_prompt">Out[107]:</div>
 
 
 
@@ -12859,16 +14135,16 @@ var element = $('#e0c4bd50-8264-4e15-bcc3-6e2652ab8e54');
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
 
 
-<div id="dc472b77-f316-479d-bffa-7166a92d4885"></div>
+<div id="269e8482-4f4d-48dc-9708-9620e595662c"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#dc472b77-f316-479d-bffa-7166a92d4885');
+var element = $('#269e8482-4f4d-48dc-9708-9620e595662c');
 
         setTimeout(function() {
             var nbb_cell_id = 107;
@@ -12899,7 +14175,7 @@ var element = $('#dc472b77-f316-479d-bffa-7166a92d4885');
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">KPSS</span><span class="p">(</span><span class="n">s4</span><span class="p">)</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12909,7 +14185,7 @@ var element = $('#dc472b77-f316-479d-bffa-7166a92d4885');
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[108]:</div>
+    <div class="prompt output_prompt">Out[108]:</div>
 
 
 
@@ -12932,16 +14208,16 @@ var element = $('#dc472b77-f316-479d-bffa-7166a92d4885');
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
 
 
-<div id="416f989d-7efc-444f-aa52-270373e41834"></div>
+<div id="abcca59b-7b65-493b-a7d4-c947351127f9"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#416f989d-7efc-444f-aa52-270373e41834');
+var element = $('#abcca59b-7b65-493b-a7d4-c947351127f9');
 
         setTimeout(function() {
             var nbb_cell_id = 108;
@@ -12972,7 +14248,7 @@ var element = $('#416f989d-7efc-444f-aa52-270373e41834');
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">visual_dir</span> <span class="o">+</span> <span class="s2">&quot;s4_b.png&quot;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -12982,7 +14258,7 @@ var element = $('#416f989d-7efc-444f-aa52-270373e41834');
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[110]:</div>
+    <div class="prompt output_prompt">Out[110]:</div>
 
 
 
@@ -12997,16 +14273,16 @@ var element = $('#416f989d-7efc-444f-aa52-270373e41834');
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
 
 
-<div id="58e9c9fd-337d-49b8-aa8d-1793ef764b29"></div>
+<div id="2af6e482-faff-45fe-864d-4eca00186bf4"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#58e9c9fd-337d-49b8-aa8d-1793ef764b29');
+var element = $('#2af6e482-faff-45fe-864d-4eca00186bf4');
 
         setTimeout(function() {
             var nbb_cell_id = 110;
@@ -13037,7 +14313,7 @@ var element = $('#58e9c9fd-337d-49b8-aa8d-1793ef764b29');
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">KPSS</span><span class="p">(</span><span class="n">s4_b</span><span class="p">)</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13047,7 +14323,7 @@ var element = $('#58e9c9fd-337d-49b8-aa8d-1793ef764b29');
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[111]:</div>
+    <div class="prompt output_prompt">Out[111]:</div>
 
 
 
@@ -13070,16 +14346,16 @@ var element = $('#58e9c9fd-337d-49b8-aa8d-1793ef764b29');
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
 
 
-<div id="5b42ebfc-630a-47d8-8490-2974c079de8b"></div>
+<div id="410cb22f-cbfb-41f8-b105-382ad726361d"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#5b42ebfc-630a-47d8-8490-2974c079de8b');
+var element = $('#410cb22f-cbfb-41f8-b105-382ad726361d');
 
         setTimeout(function() {
             var nbb_cell_id = 111;
@@ -13112,7 +14388,7 @@ var element = $('#5b42ebfc-630a-47d8-8490-2974c079de8b');
 <span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">s4_b</span><span class="p">,</span> <span class="n">shade</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13122,7 +14398,7 @@ var element = $('#5b42ebfc-630a-47d8-8490-2974c079de8b');
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -13137,16 +14413,16 @@ var element = $('#5b42ebfc-630a-47d8-8490-2974c079de8b');
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
 
 
-<div id="307007a4-ab8e-4251-bae4-9f6fff937897"></div>
+<div id="e0fab364-3583-4c34-94a0-76bc6685398d"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#307007a4-ab8e-4251-bae4-9f6fff937897');
+var element = $('#e0fab364-3583-4c34-94a0-76bc6685398d');
 
         setTimeout(function() {
             var nbb_cell_id = 112;
@@ -13177,7 +14453,7 @@ var element = $('#307007a4-ab8e-4251-bae4-9f6fff937897');
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">visual_dir</span> <span class="o">+</span> <span class="s2">&quot;s5.png&quot;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13187,7 +14463,7 @@ var element = $('#307007a4-ab8e-4251-bae4-9f6fff937897');
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[114]:</div>
+    <div class="prompt output_prompt">Out[114]:</div>
 
 
 
@@ -13202,16 +14478,16 @@ var element = $('#307007a4-ab8e-4251-bae4-9f6fff937897');
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
 
 
-<div id="54b60703-85a5-4f6d-8d14-9c323e2d46f5"></div>
+<div id="63ff546f-9191-416f-a4e2-50984be40ebb"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#54b60703-85a5-4f6d-8d14-9c323e2d46f5');
+var element = $('#63ff546f-9191-416f-a4e2-50984be40ebb');
 
         setTimeout(function() {
             var nbb_cell_id = 114;
@@ -13242,7 +14518,7 @@ var element = $('#54b60703-85a5-4f6d-8d14-9c323e2d46f5');
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">KPSS</span><span class="p">(</span><span class="n">s5</span><span class="p">)</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13252,7 +14528,7 @@ var element = $('#54b60703-85a5-4f6d-8d14-9c323e2d46f5');
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[115]:</div>
+    <div class="prompt output_prompt">Out[115]:</div>
 
 
 
@@ -13275,16 +14551,16 @@ var element = $('#54b60703-85a5-4f6d-8d14-9c323e2d46f5');
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
 
 
-<div id="d9088259-b325-48eb-ace5-34109b8129fb"></div>
+<div id="c6d638f6-7eca-416c-8978-2cd1d56de6d7"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#d9088259-b325-48eb-ace5-34109b8129fb');
+var element = $('#c6d638f6-7eca-416c-8978-2cd1d56de6d7');
 
         setTimeout(function() {
             var nbb_cell_id = 115;
@@ -13316,7 +14592,7 @@ var element = $('#d9088259-b325-48eb-ace5-34109b8129fb');
 <span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">s5</span><span class="p">,</span> <span class="n">shade</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13326,7 +14602,7 @@ var element = $('#d9088259-b325-48eb-ace5-34109b8129fb');
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
@@ -13341,16 +14617,16 @@ var element = $('#d9088259-b325-48eb-ace5-34109b8129fb');
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
 
 
-<div id="1ee72bb3-d20b-4c06-9bf4-511c0ee568b9"></div>
+<div id="9b7d2b14-3355-4f20-8cb4-48af09a4cbdc"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#1ee72bb3-d20b-4c06-9bf4-511c0ee568b9');
+var element = $('#9b7d2b14-3355-4f20-8cb4-48af09a4cbdc');
 
         setTimeout(function() {
             var nbb_cell_id = 116;
@@ -13381,7 +14657,7 @@ var element = $('#1ee72bb3-d20b-4c06-9bf4-511c0ee568b9');
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">visual_dir</span> <span class="o">+</span> <span class="s2">&quot;s6.png&quot;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13391,7 +14667,7 @@ var element = $('#1ee72bb3-d20b-4c06-9bf4-511c0ee568b9');
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[119]:</div>
+    <div class="prompt output_prompt">Out[119]:</div>
 
 
 
@@ -13406,16 +14682,16 @@ var element = $('#1ee72bb3-d20b-4c06-9bf4-511c0ee568b9');
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
 
 
-<div id="bbb1098f-2656-4b14-9aba-28477ab443b7"></div>
+<div id="1f3e9ae0-8437-41ce-80ff-b3ffabc5fd97"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#bbb1098f-2656-4b14-9aba-28477ab443b7');
+var element = $('#1f3e9ae0-8437-41ce-80ff-b3ffabc5fd97');
 
         setTimeout(function() {
             var nbb_cell_id = 119;
@@ -13446,7 +14722,7 @@ var element = $('#bbb1098f-2656-4b14-9aba-28477ab443b7');
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">KPSS</span><span class="p">(</span><span class="n">s6</span><span class="p">)</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13456,7 +14732,7 @@ var element = $('#bbb1098f-2656-4b14-9aba-28477ab443b7');
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[120]:</div>
+    <div class="prompt output_prompt">Out[120]:</div>
 
 
 
@@ -13479,16 +14755,16 @@ var element = $('#bbb1098f-2656-4b14-9aba-28477ab443b7');
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
 
 
-<div id="b1641b4c-6a5f-4370-9fa6-8bb87226669d"></div>
+<div id="0c04a244-97b9-4cf2-afeb-f4f21b51dcb5"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#b1641b4c-6a5f-4370-9fa6-8bb87226669d');
+var element = $('#0c04a244-97b9-4cf2-afeb-f4f21b51dcb5');
 
         setTimeout(function() {
             var nbb_cell_id = 120;
@@ -13519,7 +14795,7 @@ var element = $('#b1641b4c-6a5f-4370-9fa6-8bb87226669d');
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">visual_dir</span> <span class="o">+</span> <span class="s2">&quot;s6_b.png&quot;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13529,7 +14805,7 @@ var element = $('#b1641b4c-6a5f-4370-9fa6-8bb87226669d');
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[122]:</div>
+    <div class="prompt output_prompt">Out[122]:</div>
 
 
 
@@ -13544,16 +14820,16 @@ var element = $('#b1641b4c-6a5f-4370-9fa6-8bb87226669d');
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
 
 
-<div id="13726de9-390d-4628-bc09-77723918cc63"></div>
+<div id="a447d8ac-59c9-4034-b6eb-5994b0a3574f"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#13726de9-390d-4628-bc09-77723918cc63');
+var element = $('#a447d8ac-59c9-4034-b6eb-5994b0a3574f');
 
         setTimeout(function() {
             var nbb_cell_id = 122;
@@ -13584,7 +14860,7 @@ var element = $('#13726de9-390d-4628-bc09-77723918cc63');
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">KPSS</span><span class="p">(</span><span class="n">s6_b</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13594,7 +14870,7 @@ var element = $('#13726de9-390d-4628-bc09-77723918cc63');
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[123]:</div>
+    <div class="prompt output_prompt">Out[123]:</div>
 
 
 
@@ -13617,16 +14893,16 @@ var element = $('#13726de9-390d-4628-bc09-77723918cc63');
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
 
 
-<div id="d6547f9d-b57c-4946-abfc-ae4680185f79"></div>
+<div id="9e70a886-9319-4b9c-914a-434a20512bd2"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#d6547f9d-b57c-4946-abfc-ae4680185f79');
+var element = $('#9e70a886-9319-4b9c-914a-434a20512bd2');
 
         setTimeout(function() {
             var nbb_cell_id = 123;
@@ -13657,7 +14933,7 @@ var element = $('#d6547f9d-b57c-4946-abfc-ae4680185f79');
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">visual_dir</span> <span class="o">+</span> <span class="s2">&quot;s7.png&quot;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13667,7 +14943,7 @@ var element = $('#d6547f9d-b57c-4946-abfc-ae4680185f79');
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[125]:</div>
+    <div class="prompt output_prompt">Out[125]:</div>
 
 
 
@@ -13682,16 +14958,16 @@ var element = $('#d6547f9d-b57c-4946-abfc-ae4680185f79');
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
 
 
-<div id="b9c14a24-09ec-4530-aa19-5c31101ab5e1"></div>
+<div id="c8360663-a64e-4e84-8eb3-6b9acc59478b"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#b9c14a24-09ec-4530-aa19-5c31101ab5e1');
+var element = $('#c8360663-a64e-4e84-8eb3-6b9acc59478b');
 
         setTimeout(function() {
             var nbb_cell_id = 125;
@@ -13722,7 +14998,7 @@ var element = $('#b9c14a24-09ec-4530-aa19-5c31101ab5e1');
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">KPSS</span><span class="p">(</span><span class="n">s7</span><span class="p">)</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13732,7 +15008,7 @@ var element = $('#b9c14a24-09ec-4530-aa19-5c31101ab5e1');
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[126]:</div>
+    <div class="prompt output_prompt">Out[126]:</div>
 
 
 
@@ -13755,16 +15031,16 @@ var element = $('#b9c14a24-09ec-4530-aa19-5c31101ab5e1');
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
 
 
-<div id="aaeca08a-f517-4da4-bcfb-71ca200b6672"></div>
+<div id="43ee733a-5154-4af1-a832-f94135984cb7"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#aaeca08a-f517-4da4-bcfb-71ca200b6672');
+var element = $('#43ee733a-5154-4af1-a832-f94135984cb7');
 
         setTimeout(function() {
             var nbb_cell_id = 126;
@@ -13795,7 +15071,7 @@ var element = $('#aaeca08a-f517-4da4-bcfb-71ca200b6672');
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">visual_dir</span> <span class="o">+</span> <span class="s2">&quot;s8.png&quot;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13805,7 +15081,7 @@ var element = $('#aaeca08a-f517-4da4-bcfb-71ca200b6672');
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[128]:</div>
+    <div class="prompt output_prompt">Out[128]:</div>
 
 
 
@@ -13820,16 +15096,16 @@ var element = $('#aaeca08a-f517-4da4-bcfb-71ca200b6672');
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
 
 
-<div id="d4e05afe-f414-4fc0-a740-a6361be18202"></div>
+<div id="01b4f4b0-a781-4a79-828e-b0a510d07d9e"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#d4e05afe-f414-4fc0-a740-a6361be18202');
+var element = $('#01b4f4b0-a781-4a79-828e-b0a510d07d9e');
 
         setTimeout(function() {
             var nbb_cell_id = 128;
@@ -13860,7 +15136,7 @@ var element = $('#d4e05afe-f414-4fc0-a740-a6361be18202');
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">KPSS</span><span class="p">(</span><span class="n">s8</span><span class="p">)</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13870,7 +15146,7 @@ var element = $('#d4e05afe-f414-4fc0-a740-a6361be18202');
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[129]:</div>
+    <div class="prompt output_prompt">Out[129]:</div>
 
 
 
@@ -13893,16 +15169,16 @@ var element = $('#d4e05afe-f414-4fc0-a740-a6361be18202');
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
 
 
-<div id="db4fcd6b-0441-4a36-879a-5c04582231b5"></div>
+<div id="7183f929-e5e9-4ab3-942a-768bd5eccc57"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#db4fcd6b-0441-4a36-879a-5c04582231b5');
+var element = $('#7183f929-e5e9-4ab3-942a-768bd5eccc57');
 
         setTimeout(function() {
             var nbb_cell_id = 129;
@@ -13926,8 +15202,7 @@ var element = $('#db4fcd6b-0441-4a36-879a-5c04582231b5');
 
 </div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="How-Asset-Returns-Violate-Rules-of-Stationarity">How Asset Returns Violate Rules of Stationarity<a class="anchor-link" href="#How-Asset-Returns-Violate-Rules-of-Stationarity">&#182;</a></h2><p>Now that you are familiarized with the concept of stationary time series, the remainder of this notebook will demonstrate/discuss some of the nuances and challenges one runs into in when trying to predict time series.</p>
 <p>Before we start just know that the behavior of securities' returns challenges these requirements of stationarity and our attempts to predict them in ways that are sometimes unknowable. This is a very humbling realization but is a necessary fact that requires a strategic response in the practice of return prediction.</p>
@@ -13936,8 +15211,7 @@ var element = $('#db4fcd6b-0441-4a36-879a-5c04582231b5');
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Do-The-Means-and-Standard-Deviations-vary-with-Time?">Do The Means and Standard Deviations vary with Time?<a class="anchor-link" href="#Do-The-Means-and-Standard-Deviations-vary-with-Time?">&#182;</a></h3>
 </div>
@@ -13951,7 +15225,7 @@ var element = $('#db4fcd6b-0441-4a36-879a-5c04582231b5');
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">visual_dir</span> <span class="o">+</span> <span class="s2">&quot;mean_std_devs_by_year.png&quot;</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -13961,7 +15235,7 @@ var element = $('#db4fcd6b-0441-4a36-879a-5c04582231b5');
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[131]:</div>
+    <div class="prompt output_prompt">Out[131]:</div>
 
 
 
@@ -13976,16 +15250,16 @@ var element = $('#db4fcd6b-0441-4a36-879a-5c04582231b5');
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
 
 
-<div id="db4241a4-36ea-4387-b89f-14e35dfcf1be"></div>
+<div id="98ecb9b8-78c2-4fc2-95de-a17639ee329b"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#db4241a4-36ea-4387-b89f-14e35dfcf1be');
+var element = $('#98ecb9b8-78c2-4fc2-95de-a17639ee329b');
 
         setTimeout(function() {
             var nbb_cell_id = 131;
@@ -14009,8 +15283,7 @@ var element = $('#db4241a4-36ea-4387-b89f-14e35dfcf1be');
 
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="The-annual-means-and-standard-deviations-vary-signficantly-across-years.">The annual means and standard deviations vary signficantly across years.<a class="anchor-link" href="#The-annual-means-and-standard-deviations-vary-signficantly-across-years.">&#182;</a></h3><p>One way we can examine whether the returns are stationary is looking at the mean and standard deviation of returns by year. If those two quantities are not supposed to be a function of time then they should be pretty similar across years, right?</p>
 <p>Just by eyeballing the previous plots you can see how varied the means and volatilities are. Sometimes the mean return is highly negative while volatility is spiked like in 2008-09 or it can be positive while volatlility is much lower as in 2017.</p>
@@ -14019,8 +15292,7 @@ var element = $('#db4241a4-36ea-4387-b89f-14e35dfcf1be');
 </div>
 </div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Examining-Autocorrelation">Examining Autocorrelation<a class="anchor-link" href="#Examining-Autocorrelation">&#182;</a></h3><p>Finally we can look for evidence of correlated data points by plotting the return series and its autocorrelation and partial autocorrelation function. We'll briefly look at plots by symbol and see if there are any correlated lags.</p>
 
@@ -14035,7 +15307,7 @@ var element = $('#db4241a4-36ea-4387-b89f-14e35dfcf1be');
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">visual_dir</span> <span class="o">+</span> <span class="s2">&quot;acf_by_symbol.png&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14045,7 +15317,7 @@ var element = $('#db4241a4-36ea-4387-b89f-14e35dfcf1be');
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[134]:</div>
+    <div class="prompt output_prompt">Out[134]:</div>
 
 
 
@@ -14062,16 +15334,16 @@ height=600
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
 
 
-<div id="0cf2f96a-041e-440a-9390-6138c97b2ac2"></div>
+<div id="3fa389f3-7bf2-44b2-b7d8-fe54e10e60c8"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#0cf2f96a-041e-440a-9390-6138c97b2ac2');
+var element = $('#3fa389f3-7bf2-44b2-b7d8-fe54e10e60c8');
 
         setTimeout(function() {
             var nbb_cell_id = 134;
@@ -14102,7 +15374,7 @@ var element = $('#0cf2f96a-041e-440a-9390-6138c97b2ac2');
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">visual_dir</span> <span class="o">+</span> <span class="s2">&quot;pacf_by_symbol.png&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14112,7 +15384,7 @@ var element = $('#0cf2f96a-041e-440a-9390-6138c97b2ac2');
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[137]:</div>
+    <div class="prompt output_prompt">Out[137]:</div>
 
 
 
@@ -14129,16 +15401,16 @@ height=600
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
 
 
-<div id="c5bbf012-bf33-4a34-8fbf-084e58242a73"></div>
+<div id="ce3de6de-d739-428a-aa20-bf0caf0b71de"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#c5bbf012-bf33-4a34-8fbf-084e58242a73');
+var element = $('#ce3de6de-d739-428a-aa20-bf0caf0b71de');
 
         setTimeout(function() {
             var nbb_cell_id = 137;
@@ -14162,8 +15434,7 @@ var element = $('#c5bbf012-bf33-4a34-8fbf-084e58242a73');
 
 </div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="What-does-this-mean?">What does this mean?<a class="anchor-link" href="#What-does-this-mean?">&#182;</a></h3><p>Imagine we have a basic mean reversion strategy and we use the previous year's mean and std deviation to set the parameters for our present strategy.</p>
 
@@ -14178,7 +15449,7 @@ var element = $('#c5bbf012-bf33-4a34-8fbf-084e58242a73');
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">visual_dir</span> <span class="o">+</span> <span class="s2">&quot;SPY_mr_entry_example.png&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14188,7 +15459,7 @@ var element = $('#c5bbf012-bf33-4a34-8fbf-084e58242a73');
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[148]:</div>
+    <div class="prompt output_prompt">Out[148]:</div>
 
 
 
@@ -14205,16 +15476,16 @@ height=800
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
 
 
-<div id="7e120070-4b34-4179-bc7a-913a2b46c365"></div>
+<div id="f06b89a0-e5ed-4aff-84e6-e374e66e62b0"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#7e120070-4b34-4179-bc7a-913a2b46c365');
+var element = $('#f06b89a0-e5ed-4aff-84e6-e374e66e62b0');
 
         setTimeout(function() {
             var nbb_cell_id = 148;
@@ -14238,8 +15509,7 @@ var element = $('#7e120070-4b34-4179-bc7a-913a2b46c365');
 
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In the previous image we can see examples where there are lots of trades for some years and very few trades other years due to the previous years low or high volatility.</p>
 <p>To get a better idea of some of the potential risks involved we can calculate an estimate of the maximum adverse selection for each entry point. This assumes you were able to enter at the moment price crossed the outer bands and calculates the maximum distance between price and the band over that period.</p>
@@ -14248,8 +15518,7 @@ var element = $('#7e120070-4b34-4179-bc7a-913a2b46c365');
 </div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In the following plot we will see how some years and symbols the per trade drawdown is very high.</p>
 
@@ -14264,7 +15533,7 @@ var element = $('#7e120070-4b34-4179-bc7a-913a2b46c365');
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">visual_dir</span> <span class="o">+</span> <span class="s2">&quot;mae.png&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14274,7 +15543,7 @@ var element = $('#7e120070-4b34-4179-bc7a-913a2b46c365');
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[153]:</div>
+    <div class="prompt output_prompt">Out[153]:</div>
 
 
 
@@ -14291,16 +15560,16 @@ height=600
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
 
 
-<div id="4e6c2ed2-034e-409e-b68c-a79ac3eaca28"></div>
+<div id="07b0c304-c548-4e82-b35b-4581afc7a2b4"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#4e6c2ed2-034e-409e-b68c-a79ac3eaca28');
+var element = $('#07b0c304-c548-4e82-b35b-4581afc7a2b4');
 
         setTimeout(function() {
             var nbb_cell_id = 153;
@@ -14324,8 +15593,7 @@ var element = $('#4e6c2ed2-034e-409e-b68c-a79ac3eaca28');
 
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Below highlights the variation in trade counts per year by symbol.</p>
 
@@ -14340,7 +15608,7 @@ var element = $('#4e6c2ed2-034e-409e-b68c-a79ac3eaca28');
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">visual_dir</span> <span class="o">+</span> <span class="s2">&quot;trade_counts_facet_grid.png&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
 </pre></div>
 
-</div>
+    </div>
 </div>
 </div>
 
@@ -14350,7 +15618,7 @@ var element = $('#4e6c2ed2-034e-409e-b68c-a79ac3eaca28');
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[157]:</div>
+    <div class="prompt output_prompt">Out[157]:</div>
 
 
 
@@ -14367,16 +15635,16 @@ height=500
 
 <div class="output_area">
 
-<div class="prompt"></div>
+    <div class="prompt"></div>
 
 
 
 
 
-<div id="a58780eb-69ea-42a4-be55-9274723551a8"></div>
+<div id="2562ae1f-3b1d-456a-a49f-57dc8e1e7a2f"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#a58780eb-69ea-42a4-be55-9274723551a8');
+var element = $('#2562ae1f-3b1d-456a-a49f-57dc8e1e7a2f');
 
         setTimeout(function() {
             var nbb_cell_id = 157;
@@ -14400,8 +15668,7 @@ var element = $('#a58780eb-69ea-42a4-be55-9274723551a8');
 
 </div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Conclusions">Conclusions<a class="anchor-link" href="#Conclusions">&#182;</a></h2><p>Regarding asset returns we've seen that the means and variances are not stationary, and that there is autocorrelation between returns at differing lags, and multiple time scales. We've also seen how there is potential for large errors/losses if we assume that the return distribution from the previous period(s) to the next are the same because in most cases they are not.</p>
 <p>Hopefully this notebook shows that there is a need for a modeling framework that can assist in overcoming these challenges in a robust manner. In the next chapter I hope to demonstrate how mixture models approach these issues and the potential benefits they bring to this task.</p>
@@ -14410,8 +15677,7 @@ var element = $('#a58780eb-69ea-42a4-be55-9274723551a8');
 </div>
 </div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Resources-and-Citations">Resources and Citations<a class="anchor-link" href="#Resources-and-Citations">&#182;</a></h2><ol>
 <li><a href="https://www.seanabu.com/2016/03/22/time-series-seasonal-ARIMA-model-in-python/">https://www.seanabu.com/2016/03/22/time-series-seasonal-ARIMA-model-in-python/</a></li>
@@ -14422,6 +15688,19 @@ var element = $('#a58780eb-69ea-42a4-be55-9274723551a8');
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div></section></section>
 </div>
 </div>
 
@@ -14434,8 +15713,8 @@ require(
       waitSeconds: 15
     },
     [
-      "reveal.js/lib/js/head.min.js",
-      "reveal.js/js/reveal.js"
+      "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/lib/js/head.min.js",
+      "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/js/reveal.js"
     ],
 
     function(head, Reveal){
@@ -14446,13 +15725,13 @@ require(
             progress: true,
             history: true,
 
-            transition: "none",
+            transition: "slide",
 
             // Optional libraries used to extend on reveal.js
             dependencies: [
-                { src: "reveal.js/lib/js/classList.js",
+                { src: "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/lib/js/classList.js",
                   condition: function() { return !document.body.classList; } },
-                { src: "reveal.js/plugin/notes/notes.js",
+                { src: "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/plugin/notes/notes.js",
                   async: true,
                   condition: function() { return !!document.body.classList; } }
             ]
@@ -14467,7 +15746,7 @@ require(
         Reveal.addEventListener('slidechanged', update);
 
         function setScrollingSlide() {
-            var scroll = true
+            var scroll = false
             if (scroll === true) {
               var h = $('.reveal').height() * 0.95;
               $('section.present').find('section')
