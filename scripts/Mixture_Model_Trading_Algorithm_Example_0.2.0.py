@@ -43,7 +43,7 @@ class TradingWithGMM(QCAlgorithm):
         self.INIT_PORTFOLIO_CASH = register_param('portfolio starting cash', 100000)        
 
         self.SetStartDate(2008,9,1)  #Set Start Date
-        self.SetEndDate(2017,12,31)    #Set End Date
+        self.SetEndDate(2019,12,31)    #Set End Date
         self.SetCash(self.INIT_PORTFOLIO_CASH) #Set Strategy Cash
         
         # -----------------------------------------------------------------------------
@@ -59,8 +59,17 @@ class TradingWithGMM(QCAlgorithm):
         # -----------------------------------------------------------------------------
         
         self.BASE_SYMBOL = register_param('base symbol for algorithm management: ', 'SPY')   
-        self.symbols = [self.BASE_SYMBOL, "QQQ", "DIA", "TLT", "GLD", "EFA", "EEM"]#, "SLV"]
-        for sym in self.symbols: self.AddEquity(sym, Resolution.Minute)
+        self.symbols = [self.BASE_SYMBOL, "QQQ", "DIA", "TLT", "GLD", "EFA", "EEM"]
+        
+        # QC updated symbols to use Symbol.ID instead of Symbol.Value
+        # MUST CHANGE SYMBOLS IN OLDER ALGOS
+        def ReIndex(ticker):
+            e = self.AddEquity(ticker, Resolution.Minute)
+            return f'{e.Symbol.ID}'
+            
+        self.symbols = [ReIndex(t) for t in self.symbols]
+        # MUST UPDATE BASE SYMBOL TO NEW ID                       
+        self.BASE_SYMBOL = [x for x in self.symbols if self.BASE_SYMBOL in x][0]        
         
         # -----------------------------------------------------------------------------
         # Algo Exchange Settings
@@ -188,7 +197,6 @@ class TradingWithGMM(QCAlgorithm):
                       .astype(np.float32))
         # combine datasets
         self.prices = make_update_df(self.prices, new_prices, self.LOOKBACK)
-        #self.Debug('prices update:\n{}'.format(self.prices))
         return
     
     def check_liquidate(self):
@@ -219,28 +227,21 @@ class TradingWithGMM(QCAlgorithm):
         
         start_time = time.time() # timer
         self.update_prices() # update prices
-        #self.Debug('prices:\n{}'.format(self.prices.head()))
         self._algo_data = False
         self._longs = list()
         self._shorts = list()
 
-        #self.Debug('self.symbols:\n{}'.format([str(x) for x in self.symbols]))
-        #self.Debug('columns:\n{}'.format(self.prices.columns.unique()))
-        for sym in self.Securities.Values: # iterate through universe
+        for sym in self.prices.columns: # iterate through universe
             try:
-                self.Log('checking symbol: {}'.format(sym.Symbol))
+                self.Log('checking symbol: {}'.format(str(sym)))
                 pred_rows = list()
                 # only compute if not already invested
-                if (not self.Portfolio[str(sym)].Invested) and (str(sym) in list(map(str,self.prices.columns))):
-                    #self.Debug('sym in prices: {}'.format(sym.Symbol))
-                    if sym.Symbol.Value == "SPY": continue # single symbol for now
+                if (not self.Portfolio[sym].Invested):
                     
                     # symbol must be in list
-                    #train_px = self.History([sym.Symbol], timedelta(252*6.5), Resolution.Hour)["open"].unstack(level=0)
                     train_px = self.prices.copy()
-                    self.Debug('making training data for {}...'.format(sym.Symbol))
-                    #self.Debug('head: {}, tail: {}'.format(train_px.head(), train_px.tail()))
-                    train_ts = make_returns(train_px)[str(sym)].dropna()
+                    self.Debug('making training data for {}...'.format(str(sym)))
+                    train_ts = make_returns(train_px)[sym].dropna()
                     train_ts = train_ts[np.isfinite(train_ts)]
                     if train_ts.empty:
                         self.Debug('{} train data is empty'.format(str(sym)))
@@ -249,9 +250,7 @@ class TradingWithGMM(QCAlgorithm):
                     if train_ts.shape[0] < 50:
                         self.Debug('{} train data has too few samples'.format(str(sym)))
                         continue
-                    #self.Debug('train ts, type: {} :\n{}'.format(type(train_ts.columns[0]), train_ts))
-                    #if not any(np.isfinite(train_ts)):
-                    #    continue
+
                     tmp_X_train = train_ts.values.reshape(-1, 1)
             
                     ### fit GMM ###
@@ -261,16 +260,16 @@ class TradingWithGMM(QCAlgorithm):
                                                      columns=['s1','s2'],
                                                      index=train_ts.index)
                     
-                    state_df = train_ts.to_frame()#.reset_index()
+                    state_df = train_ts.to_frame()
                     #self.Debug('state df:\n{}'.format(state_df.head()))
                     hs_prob_df = (pd.concat([state_df, hidden_state_prob],axis=1))
                     
                     # get state probability means and stds
-                    s1_mu = hs_prob_df.query('abs(s1)>0.5')[str(sym)].mean() 
-                    s2_mu = hs_prob_df.query('abs(s2)>0.5')[str(sym)].mean() 
+                    s1_mu = hs_prob_df.query('abs(s1)>0.5')[sym].mean() 
+                    s2_mu = hs_prob_df.query('abs(s2)>0.5')[sym].mean() 
                     
-                    s1_std = hs_prob_df.query('abs(s1)>0.5')[str(sym)].std() 
-                    s2_std = hs_prob_df.query('abs(s2)>0.5')[str(sym)].std()           
+                    s1_std = hs_prob_df.query('abs(s1)>0.5')[sym].std() 
+                    s2_std = hs_prob_df.query('abs(s2)>0.5')[sym].std()           
                     
                     ### get last state estimate ###
                     last_state = hidden_states[-1]
@@ -278,11 +277,13 @@ class TradingWithGMM(QCAlgorithm):
                     last_var = np.diag(gmm.covariances_[last_state])[0]
                     
                     ### sample from distribution using last state parameters ###
-                    rvs = stats.norm.rvs(loc=last_mean, scale=np.sqrt(last_var), size=self.SAMPLES)
+                    #rvs = stats.norm.rvs(loc=last_mean, scale=np.sqrt(last_var), size=self.SAMPLES)
+                    # sample directly from the fit
+                    rvs = gmm.sample(self.SAMPLES)[0] 
                     low_ci, high_ci = stats.norm.interval(alpha=self.ALPHA, loc=np.mean(rvs), scale=np.std(rvs))
             
                     ## get current return ##
-                    tmp_ret = np.log(float(self.Securities[str(sym)].Price) / train_px[str(sym)].iloc[-1])
+                    tmp_ret = np.log(float(self.Securities[sym].Price) / train_px[sym].iloc[-1])
                             
                     ### store data into rows ###
                     # columns: cols = ['Dates', 'ith_state', ith_ret','ith_std',
@@ -298,7 +299,7 @@ class TradingWithGMM(QCAlgorithm):
                             hidden_state_prob.iloc[-1][0], hidden_state_prob.iloc[-1][1],
                             s1_mu,s2_mu,s1_std,s2_std)                    
                     pred_rows.append(row) 
-                    self.Debug('{} rowzz:\n{}'.format(sym.Symbol.Value, row))
+                    self.Debug('{} rowzz:\n{}'.format(str(sym), row))
                     
                 if pred_rows:
                     cols = ['Dates', 'ith_state', 'ith_ret','ith_std',
@@ -309,18 +310,18 @@ class TradingWithGMM(QCAlgorithm):
                             'avg_class_0_mean', 'avg_class_1_mean',
                             'avg_class_0_std', 'avg_class_1_std']             
 
-                    pred_df = make_final_pred_df(pred_rows, cols, self.THRES, sym.Symbol.Value)
-                    if pred_df.iloc[-1].loc['buys']==1: self._longs.append(sym.Symbol)
+                    pred_df = make_final_pred_df(pred_rows, cols, self.THRES, sym)
+                    if pred_df.iloc[-1].loc['buys']==1: self._longs.append(sym)
 
-                    #self._longs = np.asarray(df.query('result_tag=="too_high"')['symbol'].unique())
+                    # self._longs = np.asarray(df.query('result_tag=="too_high"')['symbol'].unique())
                     # self._shorts = np.asarray(df.query('result_tag=="too_low"')['symbol'].unique())
                     
                     #self.Log('\n'+'-'*77+'\n[{0}] longs: {1}\n[{0}] shorts: {2}'.format(self.UtcTime, self._longs, self._shorts))
                 else:
-                    self.Debug('missing or invested in {}'.format(sym.Symbol.Value))
+                    self.Debug('missing or invested in {}'.format(sym))
                     
             except Exception as e:
-                self.Debug('{} error: {}'.format(sym.Symbol.Value, e))
+                self.Debug('{} error: {}'.format(sym, e))
                 continue
 
         ## end timer
