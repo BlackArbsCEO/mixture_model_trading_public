@@ -55,8 +55,10 @@ class Benchmark6040(QCAlgorithm):
 
         self.BASE_SYMBOL = "SPY"
         self.symbols = [self.BASE_SYMBOL, "BND"]
-        for sym in self.symbols:
-            self.AddEquity(sym, Resolution.Minute)
+
+        # add symbols and convert them to IDs
+        self.symbols = [str(self.AddEquity(ticker, Resolution.Minute).Symbol.ID) for ticker in self.symbols]
+        self.BASE_SYMBOL = [symbol_id for symbol_id in self.symbols if symbol_id.startswith(f'{self.BASE_SYMBOL} ')][0]
 
         # -----------------------------------------------------------------------------
         # Algo Exchange Settings
@@ -74,7 +76,7 @@ class Benchmark6040(QCAlgorithm):
 
         self.LOOKBACK = 252  # trading days
         self.LEVERAGE = 1.0
-        self.TARGET_WEIGHTS = dict.fromkeys(self.symbols)
+        self.TARGET_WEIGHTS = {}
         self.TARGET_WEIGHTS["SPY"] = 0.6
         self.TARGET_WEIGHTS["BND"] = 0.4
         self.TOLERANCE = 0.025
@@ -231,7 +233,7 @@ class Benchmark6040(QCAlgorithm):
         start_time = time.time()  # timer
         self.update_prices()  # update prices
 
-        for sec in self.symbols:
+        for sec in self.TARGET_WEIGHTS.keys():
             # get current weights
             current_weight = self.check_current_weight(sec)
             target_weight = self.TARGET_WEIGHTS[sec]

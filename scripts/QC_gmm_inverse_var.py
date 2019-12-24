@@ -1,5 +1,5 @@
 """
-[Updated 2019-05-05]
+[Updated 2019-12-24]
 
 """
 from clr import AddReference
@@ -71,8 +71,10 @@ class GMMInverseVAR(QCAlgorithm):
         ]
         # self.symbols = [self.BASE_SYMBOL, "QQQ", "IWM", "TLT", "GLD", "EFA", "EEM",
         # 'BND', 'VNQ']
-        for sym in self.symbols:
-            self.AddEquity(sym, Resolution.Minute)
+
+        # add symbols and convert them to IDs
+        self.symbols = [str(self.AddEquity(ticker, Resolution.Minute).Symbol.ID) for ticker in self.symbols]
+        self.BASE_SYMBOL = [symbol_id for symbol_id in self.symbols if symbol_id.startswith(f'{self.BASE_SYMBOL} ')][0]
 
         # -----------------------------------------------------------------------------
         # Algo Exchange Settings

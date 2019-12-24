@@ -95,10 +95,13 @@ class TradingWithGMM(QCAlgorithm):
         # -----------------------------------------------------------------------------
         symbol_list = ["SPY", "QQQ", "DIA", "EFA", "EEM",  "TLT", 'AGG', 'LQD', "GLD"]
         self.symbols = register_param('symbols', symbol_list)
-        for sym in self.symbols: self.AddEquity(sym, Resolution.Minute)
+
+        # add symbols and convert them to IDs
+        self.symbols = [str(self.AddEquity(ticker, Resolution.Minute).Symbol.ID) for ticker in self.symbols]
             # note that the `AddEquity` resolution is `Minute`
             # this impacts how often `OnData` is called which determines whether
             # scheduled functions are called by Minute, Hour, or Daily
+        self.BASE_SYMBOL = [symbol_id for symbol_id in self.symbols if symbol_id.startswith(f'{self.BASE_SYMBOL} ')][0]
         
         # -----------------------------------------------------------------------------
         # init placeholders
